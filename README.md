@@ -59,6 +59,14 @@ The weights are set at the top of `safe_route.py`. They are judgment calls, not 
 | Live foot traffic | [LA Metro Bike Share](https://bikeshare.metro.net/) public real-time feed (no key needed); [BestTime](https://besttime.app) if you have a key |
 | Address lookup | US Census geocoder, OpenStreetMap's Nominatim, and street names from the walking network |
 
+## Demo
+
+https://github.com/user-attachments/assets/8d748167-e13b-48d1-b515-f91f640c1ded
+
+
+
+
+
 ## Getting started
 
 Requires Python 3.12+ and nothing else; everything uses the standard library.
