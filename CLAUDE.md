@@ -47,9 +47,19 @@ Coverage across 221 alerts: description 220, location 215, occurred_at 213, susp
 - `.cache/` holds the OSM network, geocodes, bike snapshots, and BestTime venue IDs. Delete `.cache/geocode.json` to re-geocode, or pass `--refresh-map` to re-download OSM. Overpass is often overloaded (502), so the downloader rotates through mirrors.
 - Map tiles: tile.openstreetmap.org (CARTO now requires an API key).
 
-## Safety Path web app / PWA
+## Safety Path app (React frontend + Python backend)
 
-- `python3 safety_server.py [--host 0.0.0.0 --port 8000]` → stdlib `ThreadingHTTPServer`; loads `RouteEngine` once (~3 s), then serves `static/` + `/api/route`, `/api/geocode`, `/api/health`.
+- **The UI is `frontend/`** (React + Vite + Leaflet; design tokens in `frontend/src/styles.css`, PRD + API contract in `frontend/docs/`). `cd frontend && npm run build` → `frontend/dist/`, which `safety_server.py` serves at `/` with SPA fallback. If `dist/` doesn't exist the server falls back to the older `static/` UI.
+- `POST /path` (contract in `frontend/docs/API_CONTRACT.md`) → `path_response()` in `safe_route.py`: factors (`lighting_pct` = streetlight within `LIT_RANGE_M`=35 m, `activity_score` from busyness, `resource_proximity_pct` = patrol coverage, `recent_alerts` = DPS+LAPD within 50 m in `ALERT_WINDOW_DAYS`=30), `contract_reasons()`, `fastest_summary()`, `instructions()` (turn left/right from headings measured over ~20 m; same-street steps merged). 422 outside `SERVICE_AREA` (must match `AREA_BOUNDS` in `frontend/src/data/places.js`).
+- Frontend dev: `npm run dev` proxies `/path` and `/api` to `127.0.0.1:8000` (vite.config.js). Env: `VITE_USE_MOCK=1` for sample data, `VITE_TRACKING_MODE=gps` for real location (default `simulate`), `VITE_API_URL` for a remote backend.
+- `frontend/src/lib/location.js`: start = GPS if inside the service area, else `CURRENT_LOCATION`; hard 6 s timeout because an unanswered permission prompt never fires the geolocation callbacks.
+- Bike-share signals can only *raise* busyness (quiet dock ≠ empty street); BestTime signals blend both ways.
+- Map tiles: OSM + `.tiles-dark` CSS filter (CARTO dark tiles need an API key).
+- zsh gotcha: `echo =====` fails (equals expansion) — use `echo '---'`.
+
+## Older single-page UI (`static/`) and server details
+
+- `python3 safety_server.py [--host 0.0.0.0 --port 8000]` → stdlib `ThreadingHTTPServer`; loads `RouteEngine` once (~3 s), then serves the UI + `POST /path`, `/api/route`, `/api/geocode`, `/api/health`.
 - `RouteEngine` (in `safe_route.py`) combines DPS alerts (×2 weight), LAPD incidents from `usc_crimes_location_time_type.csv` (in-bbox rows only, `LAPD_SEVERITY` table), `streetlights.csv` (from `fetch_streetlights.py`, LA City dataset `twzm-wihy`, ~7.9k poles with watts), and `patrol_zone.json` (an **approximate** rectangle for the DPS UPC patrol area; replace with the real DPS PDF boundary). Edge cost adds `W_UNLIT·(1−lighting)` and `W_OUTSIDE·outside_patrol`. `generate_reasons()` builds the "Why this route?" bullets from recommended-vs-fastest deltas.
 - Frontend: `static/index.html`, `app.js` (Leaflet, autocomplete, panel), `nav.js` (live GPS, off-route >30 m for 10 s → reroute, SOS sheet with DPS/911/copy location), `sw.js`, `manifest.webmanifest`, generated icons. `?from=…&to=…` in the URL auto-routes.
 - **Cache busting:** static assets are referenced as `?v=N` in `index.html` and in `SHELL` in `sw.js`; bump N and `VERSION` together after editing CSS/JS, or phones keep the old copy.

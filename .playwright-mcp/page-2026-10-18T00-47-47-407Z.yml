@@ -1,0 +1,32 @@
+- generic [ref=f11e110]:
+  - generic [ref=f11e111]:
+    - button "Back to home" [ref=f11e112] [cursor=pointer]
+    - heading "Plan your walk" [level=1] [ref=f11e115]
+    - button "Now" [ref=f11e116] [cursor=pointer]
+  - generic [ref=f11e127]:
+    - generic [ref=f11e128]:
+      - generic [ref=f11e129]: From
+      - generic [ref=f11e130]: Current location
+    - generic [ref=f11e131]:
+      - text: To
+      - textbox "To" [active] [ref=f11e132]:
+        - /placeholder: Search a place or address
+  - status [ref=f11e133]: Finding your safety path…
+  - generic [ref=f11e134]:
+    - button "W Adams Blvd & Figueroa North University Park" [disabled] [ref=f11e135] [cursor=pointer]:
+      - generic [ref=f11e140]:
+        - generic [ref=f11e141]: W Adams Blvd & Figueroa
+        - generic [ref=f11e142]: North University Park
+    - button "W 28th St & S Hoover St North University Park" [disabled] [ref=f11e143] [cursor=pointer]:
+      - generic [ref=f11e148]:
+        - generic [ref=f11e149]: W 28th St & S Hoover St
+        - generic [ref=f11e150]: North University Park
+    - button "W 30th St & S Vermont Ave North University Park" [disabled] [ref=f11e151] [cursor=pointer]:
+      - generic [ref=f11e156]:
+        - generic [ref=f11e157]: W 30th St & S Vermont Ave
+        - generic [ref=f11e158]: North University Park
+    - button "USC campus · Jefferson & Hoover University Park" [disabled] [ref=f11e159] [cursor=pointer]:
+      - generic [ref=f11e164]:
+        - generic [ref=f11e165]: USC campus · Jefferson & Hoover
+        - generic [ref=f11e166]: University Park
+  - paragraph [ref=f11e168]: Paths are available between W Adams Blvd–W Jefferson Blvd and S Vermont Ave–S Figueroa St. Search © OpenStreetMap.

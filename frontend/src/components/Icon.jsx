@@ -10,6 +10,8 @@ const PATHS = {
   pin: (<><path d="M12 21s-7-6.5-7-12a7 7 0 0114 0c0 5.5-7 12-7 12z" /><circle cx="12" cy="9" r="2.5" /></>),
   up: <path d="M12 20V5M6 11l6-6 6 6" />,
   right: <path d="M5 20v-7a4 4 0 014-4h10M15 5l4 4-4 4" />,
+  left: <path d="M19 20v-7a4 4 0 00-4-4H5M9 5L5 9l4 4" />,
+  uturn: <path d="M8 20V9a5 5 0 0110 0v3M14 9l4 4 4-4" />,
   campus: <path d="M3 10l9-6 9 6M5 10v10h14V10M10 20v-5h4v5" />,
   home: <path d="M4 11l8-7 8 7v9h-5v-6h-6v6H4z" />,
   users: (<><circle cx="9" cy="8" r="3.5" /><path d="M2.5 20c.8-3.5 3.4-5 6.5-5s5.7 1.5 6.5 5" /><circle cx="17" cy="9" r="2.5" /><path d="M17 14c2.3 0 4 1.2 4.6 3.8" /></>),

@@ -1,8 +1,12 @@
 import mockPath from './mock/mock_path.json';
 
+// Same origin by default: safety_server.py serves this app and the API together, and in
+// `npm run dev` Vite proxies /path and /api to it (see vite.config.js).
+// Set VITE_API_URL to call a backend on another host, or VITE_USE_MOCK=1 to stay offline.
 const API_URL = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
 
-export const usingMock = !API_URL;
+export const usingMock = import.meta.env.VITE_USE_MOCK === '1';
+export const apiUrl = (path) => `${API_URL}${path}`;
 
 /**
  * Ask the backend for a recommended path and the fastest path.
@@ -14,7 +18,7 @@ export async function getPath({ origin, destination, departAt }) {
     return mockPath;
   }
 
-  const res = await fetch(`${API_URL}/path`, {
+  const res = await fetch(apiUrl('/path'), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -23,6 +27,9 @@ export async function getPath({ origin, destination, departAt }) {
       depart_at: departAt,
     }),
   });
-  if (!res.ok) throw new Error(`Path request failed (${res.status})`);
+  if (!res.ok) {
+    const body = await res.json().catch(() => ({}));
+    throw new Error(body.error || `Path request failed (${res.status})`);
+  }
   return res.json();
 }

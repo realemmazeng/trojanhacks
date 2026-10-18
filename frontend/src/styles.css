@@ -186,6 +186,8 @@ a { color: var(--lit); }
 
 /* Leaflet tweaks */
 .leaflet-container { background: var(--night); font-family: var(--font-body); }
+/* Turn the light OSM basemap into a night map that matches --night / --surface. */
+.tiles-dark { filter: invert(1) hue-rotate(200deg) brightness(0.85) contrast(0.85) saturate(0.4); }
 .leaflet-control-attribution { background: rgba(14, 17, 22, 0.75) !important; color: var(--muted) !important; }
 .leaflet-control-attribution a { color: var(--text-2) !important; }
 

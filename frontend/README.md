@@ -1,13 +1,22 @@
 # Safety Path at USC — frontend
 
-React + Vite + Leaflet. Runs fully on mock data until the backend is ready.
+React + Vite + Leaflet. Talks to the Python backend (`safety_server.py` in the repo root).
 
 ## Run it
 ```bash
+# terminal 1 — backend on :8000 (from the repo root)
+python3 safety_server.py
+
+# terminal 2 — frontend with hot reload
 cd frontend
 npm install
 cp .env.example .env     # optional
-npm run dev              # http://localhost:5173 (also shown with your LAN IP)
+npm run dev              # http://localhost:5173; /path and /api are proxied to :8000
+```
+
+For a demo or a phone, build once and let the backend serve everything on one port:
+```bash
+npm run build            # -> frontend/dist, served by safety_server.py at http://127.0.0.1:8000
 ```
 
 ## Screens (flow)
@@ -28,12 +37,14 @@ Home "Where to?" → Search → Recommended → (See details → Why) → Start 
 | `src/screens/Tracking.jsx` | Live location, next step, off-path alert |
 | `src/screens/Arrived.jsx` | Arrived safely ❤️ |
 
-## Connecting the backend
-1. Backend implements `POST /path` exactly as in [`docs/API_CONTRACT.md`](docs/API_CONTRACT.md).
-2. Set `VITE_API_URL=http://localhost:8000` (or the deployed URL) in `.env`.
-3. Restart `npm run dev`. That's it — `src/api.js` switches from mock to real.
+## Backend
+`safety_server.py` implements `POST /path` as in [`docs/API_CONTRACT.md`](docs/API_CONTRACT.md), plus
+`GET /api/geocode` used by place search. Calls go to the same origin by default (Vite proxies them in dev).
+- `VITE_API_URL=https://…` — call a backend on another host instead.
+- `VITE_USE_MOCK=1` — use `src/mock/mock_path.json` (no backend needed); keep it in sync with the contract.
 
-The mock response lives in `src/mock/mock_path.json`; keep it in sync with the contract.
+The walk starts at the phone's GPS position when it's inside the service area (`src/lib/location.js`),
+otherwise at the campus stand-in `CURRENT_LOCATION`.
 
 ## Tracking modes
 `VITE_TRACKING_MODE` in `.env`:
@@ -51,14 +62,21 @@ Sharing is UI-only for now: picking contacts records who a walk was shared with,
 To make it real, add a backend endpoint (e.g. `POST /share`) that texts or emails a live-tracking link.
 
 ## Destination search
-`src/lib/geocode.js` calls OpenStreetMap Nominatim, bounded to the service area, debounced to ~1 request per
-second as its usage policy requires. In mock mode the path itself is always the sample path.
+`src/lib/geocode.js` asks the backend's `/api/geocode` first (understands "28th & Orchard", street addresses
+and place names), and falls back to OpenStreetMap Nominatim directly in mock mode or if that call fails.
+Results are limited to the service area. In mock mode the path itself is always the sample path.
 
 ## To replace before a real demo
-- `src/data/places.js` — demo places have **approximate** coordinates; swap in real ones
-  or a geocoding search. `SERVICE_AREA` is illustrative; replace with the traced USC DPS patrol polygon.
+- `src/data/places.js` — suggested places and the `SERVICE_AREA` outline use real intersection
+  coordinates from the walking network. The backend's patrol area (`patrol_zone.json`) is still an
+  approximation; replace it with the traced USC DPS patrol polygon.
 - Login is a placeholder (USC NetID button skips straight in).
 
 ## Design tokens
 Colors, type and radii from the Foundation board are CSS variables at the top of `src/styles.css`.
-Map tiles: CARTO dark basemap (© OpenStreetMap contributors, © CARTO) — keep the attribution visible.
+Map tiles: standard OpenStreetMap tiles darkened with the `.tiles-dark` CSS filter (CARTO's dark basemap
+now requires an API key). Keep the © OpenStreetMap attribution visible.
+
+## Install to home screen
+`public/manifest.webmanifest`, `public/sw.js` and the icons make the built app installable. The service
+worker is registered only in production builds (`src/main.jsx`), so `npm run dev` never serves stale code.

@@ -8,6 +8,14 @@ import { formatClock, formatDistance } from '../lib/format.js';
 
 const MODE = import.meta.env.VITE_TRACKING_MODE === 'gps' ? 'gps' : 'simulate';
 
+// Arrow for the current instruction ("Turn left onto…", "Continue onto…", "Head north on…").
+function turnIcon(instruction, index) {
+  if (index === 0 || /^(continue|head)/i.test(instruction)) return 'up';
+  if (/\bleft\b/i.test(instruction)) return 'left';
+  if (/turn around|u-turn/i.test(instruction)) return 'uturn';
+  return 'right';
+}
+
 export default function Tracking({ trip, friends, onShareChange, onAddFriends, onEnd, onArrive }) {
   const { result, sharedWith } = trip;
   const [sharing, setSharing] = useState(false);
@@ -56,7 +64,7 @@ export default function Tracking({ trip, friends, onShareChange, onAddFriends, o
         <div className="overlay-top">
           <div className="card" style={{ flex: 1, padding: '14px 16px', display: 'flex', gap: 14, alignItems: 'center', borderRadius: 18 }}>
             <span style={{ width: 44, height: 44, borderRadius: 12, background: 'var(--selected)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-              <Icon name={current === 0 ? 'up' : 'right'} size={24} color={COLORS.lit} width={2.4} />
+              <Icon name={turnIcon(step.instruction, current)} size={24} color={COLORS.lit} width={2.4} />
             </span>
             <span style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
               <span style={{ fontSize: 16, fontWeight: 700 }}>{step.instruction}</span>

@@ -1,0 +1,43 @@
+- generic [ref=f12e149]:
+  - img "Recommended path in solid blue and fastest path in dashed orange" [ref=f12e150]:
+    - generic [ref=f12e151]:
+      - generic:
+        - generic:
+          - img:
+            - generic:
+              - generic [ref=f12e152] [cursor=pointer]
+              - generic [ref=f12e153] [cursor=pointer]
+              - generic [ref=f12e154] [cursor=pointer]
+              - generic [ref=f12e155] [cursor=pointer]
+      - generic [ref=f12e156]:
+        - link "Leaflet" [ref=f12e157] [cursor=pointer]:
+          - /url: https://leafletjs.com
+        - text: "| ©"
+        - link "OpenStreetMap" [ref=f12e162] [cursor=pointer]:
+          - /url: https://www.openstreetmap.org/copyright
+        - text: contributors
+  - generic [ref=f12e163]:
+    - button "Back to path planning" [ref=f12e164] [cursor=pointer]
+    - generic [ref=f12e167]:
+      - generic [ref=f12e168]: Current location → W Adams Blvd & Figueroa
+      - generic [ref=f12e169]: Leaving now
+  - generic [ref=f12e170]:
+    - generic [ref=f12e172]:
+      - generic [ref=f12e173]: RECOMMENDED PATH
+      - generic [ref=f12e175]: 15 min
+    - generic [ref=f12e176]:
+      - generic [ref=f12e177]:
+        - heading "Why this path?" [level=2] [ref=f12e178]
+        - button "See details" [ref=f12e179] [cursor=pointer]
+      - list [ref=f12e182]:
+        - listitem [ref=f12e183]: Fewer recent alerts along the path (1 vs 2)
+    - generic [ref=f12e188]:
+      - generic [ref=f12e189]: Fastest path · 15 min
+      - generic [ref=f12e190]: More recent alerts
+    - generic [ref=f12e195]:
+      - generic [ref=f12e196]: This path doesn't guarantee your safety.
+      - generic [ref=f12e197]: Based on available data, updated today, 17:48. Stay aware.
+    - button "Not shared with anyone Share" [ref=f12e198] [cursor=pointer]:
+      - generic [ref=f12e204]: Not shared with anyone
+      - generic [ref=f12e205]: Share
+    - button "Start walking" [ref=f12e206] [cursor=pointer]

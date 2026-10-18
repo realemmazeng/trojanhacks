@@ -47,6 +47,11 @@ WALK_SPEED = 1.3  # m/s
 #                                  + W_ALLEY on alleys/driveways/parking aisles, which are isolated))
 W_RISK, W_DARK, W_QUIET, W_ALLEY = 4.0, 1.0, 1.0, 1.0
 W_UNLIT, W_OUTSIDE = 1.5, 0.5
+LIT_RANGE_M = 35          # a segment counts as "lit" if a streetlight is within this distance
+ALERT_WINDOW_DAYS = 30    # "recent relevant alerts" window reported to the frontend
+# Product service area (W Adams–W Jefferson × S Vermont–S Figueroa, with margin); matches
+# AREA_BOUNDS in frontend/src/data/places.js. Routing itself works anywhere inside BBOX.
+SERVICE_AREA = (34.0195, -118.2945, 34.0355, -118.2715)
 ISOLATED_SERVICE = ("alley", "driveway", "parking_aisle")
 
 # LAPD crime types -> street-safety severity (0..4). Burglary/theft are weaker signals for a walker;
@@ -660,19 +665,22 @@ def score_edges(graph, incidents, when, signals, lights=None, patrol=None):
     darkness = max(0.0, min(1.0, (3 - solar_elevation(when)) / 9))
     # Lighting: sum streetlight watts within 40 m of the edge midpoint, Gaussian weighted.
     # Normalise so the top 10% of edges are ~1.0 and most residential edges land around 0.3-0.6.
-    light_watts = []
+    light_watts, lit_near = [], []
     if lights:
         for m in mids:
-            w = 0.0
+            w, nearest = 0.0, math.inf
             for lat, lon, watts in lights.near(m, 1):
                 d = dist_m(m, (lat, lon))
+                nearest = min(nearest, d)
                 if d < 60:
                     w += watts * math.exp(-d * d / (2 * 25 * 25))
             light_watts.append(w)
+            lit_near.append(1 if nearest <= LIT_RANGE_M else 0)
         lit_scale = sorted(light_watts)[int(len(light_watts) * 0.90)] or 1.0
         lighting = [min(1.0, w / lit_scale) for w in light_watts]
     else:
         lighting = [0.0] * len(graph.edges)
+        lit_near = [0] * len(graph.edges)
 
     dark = []
     for i, e in enumerate(graph.edges):
@@ -694,9 +702,14 @@ def score_edges(graph, incidents, when, signals, lights=None, patrol=None):
         f = 0.2 if e["service"] in ISOLATED_SERVICE else CLASS_BUSY.get(e["hw"], 0.5)
         busy.append(f * profile)
 
-    if signals:
+    # Bike-share dock moves prove people are around, but a quiet dock doesn't prove a street is
+    # empty, so bike share can only raise busyness. BestTime measures crowds directly: full blend.
+    for raise_only, group in ((True, [s for s in signals if s.get("source") == "bikeshare"]),
+                              (False, [s for s in signals if s.get("source") != "bikeshare"])):
+        if not group:
+            continue
         sgrid = Grid(150)
-        for s in signals:
+        for s in group:
             sgrid.add((s["lat"], s["lon"]), s)
         for i, m in enumerate(mids):
             num = den = 0.0
@@ -706,13 +719,14 @@ def score_edges(graph, incidents, when, signals, lights=None, patrol=None):
                 num, den = num + k * s["value"], den + k
             if den > 0.02:
                 a = min(1.0, den)
-                busy[i] = (1 - a) * busy[i] + a * num / den
+                blended = (1 - a) * busy[i] + a * num / den
+                busy[i] = max(busy[i], blended) if raise_only else blended
 
     outside = [0] * len(graph.edges)
     if patrol:
         outside = [0 if point_in_any(m, patrol) else 1 for m in mids]
 
-    return {"risk": risk, "dark": dark, "busy": busy, "lighting": lighting,
+    return {"risk": risk, "dark": dark, "busy": busy, "lighting": lighting, "lit_near": lit_near,
             "outside": outside, "darkness": darkness}
 
 
@@ -757,24 +771,131 @@ def summarize(graph, path, scored, incidents, when):
     near_lapd = [i for i in incidents if i.get("source") == "LAPD" and incident_weight(i, when) > 0
                  and (when - datetime.fromisoformat(i["occurred_at"]).replace(tzinfo=LA)).days <= 365
                  and any(dist_m((i["lat"], i["lon"]), p) < 40 for p in route_grid.near((i["lat"], i["lon"])))]
-    steps = []
-    for e in edges:
+    steps = []  # [name, metres, index into coords where the step starts]
+    for k, e in enumerate(edges):
         name = graph.label(e)
         if steps and steps[-1][0] == name:
             steps[-1][1] += graph.edges[e]["len"]
         elif steps and graph.edges[e]["len"] < 15 and steps[-1][1] >= 15:
             steps[-1][1] += graph.edges[e]["len"]  # fold short crossings/connectors into the current step
         else:
-            steps.append([name, graph.edges[e]["len"]])
+            steps.append([name, graph.edges[e]["len"], k])
     patrol_coverage = 1 - avg(scored["outside"])
+    # Recent alerts (both sources) within 50 m, for the frontend's "recent relevant alerts" factor.
+    recent = [i for i in incidents if 0 <= (when - _incident_time(i)).days <= ALERT_WINDOW_DAYS
+              and any(dist_m((i["lat"], i["lon"]), p) < 50 for p in route_grid.near((i["lat"], i["lon"])))]
     return {"length_m": round(length), "minutes": round(length / WALK_SPEED / 60, 1),
             "risk": round(avg(scored["risk"]), 3), "dark": round(avg(scored["dark"]), 3),
             "busy": round(avg(scored["busy"]), 3), "lighting": round(avg(scored["lighting"]), 3),
             "patrol_coverage": round(patrol_coverage, 3),
+            "lit_frac": round(avg(scored["lit_near"]), 3),
             "incidents_2y_within_60m": len(near_dps),
             "lapd_1y_within_40m": len(near_lapd),
+            "recent_alerts": len(recent),
             "coords": [[round(p[0], 6), round(p[1], 6)] for p in pts],
-            "steps": [[n, round(m)] for n, m in steps if m >= 15]}
+            "steps": [[n, round(m)] for n, m, _ in steps if m >= 15],
+            "step_detail": _merge_short_steps(steps)}
+
+
+def _incident_time(inc):
+    try:
+        return datetime.fromisoformat(inc["occurred_at"]).replace(tzinfo=LA)
+    except ValueError:
+        return datetime.min.replace(tzinfo=LA)
+
+
+def _merge_short_steps(steps, min_m=15):
+    """Fold steps shorter than min_m into the previous one (keeps start indices consistent)."""
+    out = []
+    for name, m, start in steps:
+        if out and (m < min_m or out[-1][0] == name):
+            out[-1][1] += m
+        else:
+            out.append([name, m, start])
+    return out
+
+
+ABBREV = [(r"\bWest\b", "W"), (r"\bEast\b", "E"), (r"\bNorth\b", "N"), (r"\bSouth\b", "S"),
+          (r"\bBoulevard\b", "Blvd"), (r"\bStreet\b", "St"), (r"\bAvenue\b", "Ave"),
+          (r"\bPlace\b", "Pl"), (r"\bDrive\b", "Dr"), (r"\bParkway\b", "Pkwy")]
+
+
+TYPE_ABBR = {"street": "St", "avenue": "Ave", "boulevard": "Blvd", "place": "Pl", "drive": "Dr",
+             "parkway": "Pkwy", "way": "Way", "road": "Rd", "court": "Ct", "lane": "Ln"}
+
+
+def street_title(core, typ=None):
+    """('28th', 'street') -> '28th St'; ('orchard', None) -> 'Orchard'."""
+    words = " ".join(w if w[:1].isdigit() else w.capitalize() for w in core.split())
+    return f"{words} {TYPE_ABBR[typ]}" if typ in TYPE_ABBR else words
+
+
+def short_street(name):
+    """'sidewalk along West Jefferson Boulevard' -> 'W Jefferson Blvd'."""
+    name = re.sub(r"^(sidewalk along|alley near)\s+", "", name)
+    for pat, rep in ABBREV:
+        name = re.sub(pat, rep, name)
+    return name
+
+
+def _bearing(a, b):
+    y = math.sin(math.radians(b[1] - a[1])) * math.cos(math.radians(b[0]))
+    x = (math.cos(math.radians(a[0])) * math.sin(math.radians(b[0]))
+         - math.sin(math.radians(a[0])) * math.cos(math.radians(b[0])) * math.cos(math.radians(b[1] - a[1])))
+    return (math.degrees(math.atan2(y, x)) + 360) % 360
+
+
+def _point_at(coords, i, step, min_m=20):
+    """Walk from coords[i] in direction step (+1/-1) until at least min_m away (or the path ends).
+
+    Measuring headings over ~20 m ignores tiny crosswalk/curb segments that would otherwise
+    make a real turn look like "continue" (or vice versa).
+    """
+    j = i
+    while 0 <= j + step < len(coords):
+        j += step
+        if dist_m(coords[i], coords[j]) >= min_m:
+            break
+    return coords[j]
+
+
+def instructions(coords, step_detail):
+    """Turn [name, metres, start_index] steps into contract steps with spoken-style instructions."""
+    # "University Avenue" and "sidewalk along University Avenue" are one step to a walker.
+    merged = []
+    for name, m, start in step_detail:
+        if merged and short_street(merged[-1][0]) == short_street(name):
+            merged[-1][1] += m
+        else:
+            merged.append([name, m, start])
+    step_detail = merged
+    out = []
+    for n, (name, m, start) in enumerate(step_detail):
+        street = short_street(name)
+        onto = street if street[0].isupper() else f"the {street}"
+        if n == 0:
+            nxt = _point_at(coords, start, +1)
+            card = ["north", "northeast", "east", "southeast", "south", "southwest", "west", "northwest"]
+            text = f"Head {card[round(_bearing(coords[start], nxt) / 45) % 8]} on {onto}"
+        else:
+            # Corner sidewalks often put the actual turn a few metres *inside* the previous step,
+            # so take the previous heading from that step's start when it's short, otherwise from
+            # the stretch 40→10 m before this step begins.
+            _, prev_m, prev_start = step_detail[n - 1]
+            if prev_m < 100:
+                prev_heading = _bearing(coords[prev_start], _point_at(coords, prev_start, +1))
+            else:
+                prev_heading = _bearing(_point_at(coords, start, -1, 40), _point_at(coords, start, -1, 10))
+            new_heading = _bearing(coords[start], _point_at(coords, start, +1))
+            delta = (new_heading - prev_heading + 540) % 360 - 180
+            if abs(delta) < 30:
+                text = f"Continue onto {onto}"
+            elif abs(delta) > 150:
+                text = f"Turn around onto {onto}"
+            else:
+                text = f"Turn {'right' if delta > 0 else 'left'} onto {onto}"
+        out.append({"instruction": text, "distance_m": round(m), "start_index": start})
+    return out
 
 
 def generate_reasons(rec, fast):
@@ -1000,7 +1121,7 @@ class RouteEngine:
         if len(streets) >= 2 and re.search(r"&|\band\b|\bat\b|/", text, re.I):
             p = self.graph.intersection(streets[0], streets[1])
             if p:
-                results.append({"label": f"{streets[0][0].title()} & {streets[1][0].title()}",
+                results.append({"label": f"{street_title(*streets[0])} & {street_title(*streets[1])}",
                                 "lat": p[0], "lon": p[1], "kind": "intersection"})
         # 3. Full geocoder (address / Nominatim). Reuses the cache so repeated typing is fast.
         try:
@@ -1043,6 +1164,97 @@ class RouteEngine:
                 "disclaimer": ("This route is informational and does not guarantee safety. "
                                "Trust your instincts, stay aware of your surroundings, "
                                "and call USC DPS at 213-740-4321 or 911 if you feel unsafe.")}
+
+
+def in_service_area(p):
+    s, w, n, e = SERVICE_AREA
+    return s <= p[0] <= n and w <= p[1] <= e
+
+
+def _factors(r):
+    score = round(min(1.0, r["busy"] / 0.85) * 100)  # 0.85 = busiest street class at peak hour
+    return {"lighting_pct": round(r["lit_frac"] * 100),
+            "activity": "High" if score >= 60 else "Medium" if score >= 30 else "Low",
+            "activity_score": score,
+            "resource_proximity_pct": round(r["patrol_coverage"] * 100),
+            "recent_alerts": r["recent_alerts"]}
+
+
+def contract_reasons(rf, ff, same=False):
+    """Short reasons in the frontend's voice; only factors where the recommended path is better."""
+    if same:
+        return ["The fastest path is also the best-scoring path for this trip"]
+    out = []
+    if rf["lighting_pct"] - ff["lighting_pct"] >= 5:
+        out.append(f"Greater lighting coverage ({rf['lighting_pct']}% vs {ff['lighting_pct']}%)")
+    if rf["activity_score"] - ff["activity_score"] >= 8:
+        out.append("More active streets at this time")
+    if rf["resource_proximity_pct"] - ff["resource_proximity_pct"] >= 5:
+        out.append("More of the path is within USC's published patrol area")
+    if rf["recent_alerts"] < ff["recent_alerts"]:
+        out.append(f"Fewer recent alerts along the path ({rf['recent_alerts']} vs {ff['recent_alerts']})")
+    elif rf["recent_alerts"] == 0:
+        out.append(f"No recent alerts directly along the path (last {ALERT_WINDOW_DAYS} days)")
+    if not out:
+        out.append("Avoids higher-crime blocks on the fastest path")  # the risk term is what moved it
+    return out
+
+
+def fastest_summary(rf, ff, same):
+    if same:
+        return "Same as the recommended path"
+    worse = []
+    if ff["lighting_pct"] < rf["lighting_pct"] - 4:
+        worse.append("less lighting")
+    if ff["activity_score"] < rf["activity_score"] - 7:
+        worse.append("quieter streets")
+    if ff["resource_proximity_pct"] < rf["resource_proximity_pct"] - 4:
+        worse.append("less patrol coverage")
+    if ff["recent_alerts"] > rf["recent_alerts"]:
+        worse.append("more recent alerts")
+    text = ", ".join(worse) if worse else "shorter, with similar conditions"
+    return text[0].upper() + text[1:]
+
+
+def path_response(engine, origin, dest, when):
+    """Build the POST /path response described in frontend/docs/API_CONTRACT.md."""
+    result = engine.route(origin, dest, when)
+    if result is None:
+        return None
+    rec, fast = result["recommended"], result["fastest"]
+    rf, ff = _factors(rec), _factors(fast)
+    same = rec["coords"] == fast["coords"]
+    now = datetime.now(LA).isoformat(timespec="seconds")
+
+    def day_iso(d):
+        return f"{d}T00:00:00" if len(d) == 10 else d
+
+    sources = [{"name": "Walking network · OpenStreetMap", "updated_at": now}]
+    if engine.light_count:
+        sources.append({"name": "Streetlights · City of LA", "updated_at": "2026-03-10T00:00:00"})
+    sources.append({"name": "Patrol area · USC DPS (approximate)", "updated_at": "2025-01-15T00:00:00"})
+    if engine.dps:
+        sources.append({"name": "Crime alerts · USC DPS",
+                        "updated_at": day_iso(max(i["occurred_at"] for i in engine.dps))})
+    if engine.lapd:
+        sources.append({"name": "Incidents · LAPD",
+                        "updated_at": day_iso(max(i["occurred_at"] for i in engine.lapd))})
+    live = [s for s in result["signals"] if s.get("source") == "bikeshare"]
+    sources.append({"name": "Street activity · time of day" + (" + LA Metro Bike Share" if live else ""),
+                    "updated_at": now})
+
+    return {
+        "recommended": {"minutes": max(1, round(rec["minutes"])), "distance_m": rec["length_m"],
+                        "geometry": rec["coords"], "steps": instructions(rec["coords"], rec["step_detail"]),
+                        "factors": rf, "reasons": contract_reasons(rf, ff, same)},
+        "fastest": {"minutes": max(1, round(fast["minutes"])), "distance_m": fast["length_m"],
+                    "geometry": fast["coords"], "factors": ff, "summary": fastest_summary(rf, ff, same)},
+        "extra_minutes": max(0, round(rec["minutes"]) - round(fast["minutes"])),
+        "alert_window_days": ALERT_WINDOW_DAYS,
+        "data_sources": sources,
+        "updated_at": now,
+        "disclaimer": "This path doesn't guarantee your safety.",
+    }
 
 
 def cmd_route(args):

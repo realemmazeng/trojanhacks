@@ -13,7 +13,8 @@ import Why from './screens/Why.jsx';
 import Tracking from './screens/Tracking.jsx';
 import Arrived from './screens/Arrived.jsx';
 import { getPath, usingMock } from './api.js';
-import { CURRENT_LOCATION, PLACES, inServiceArea } from './data/places.js';
+import { PLACES, inServiceArea } from './data/places.js';
+import { currentOrigin } from './lib/location.js';
 import { load, save, uid } from './lib/store.js';
 import { departAt } from './lib/time.js';
 
@@ -60,12 +61,13 @@ export default function App() {
     setLoading(true);
     try {
       const when = departAt(departure);
-      const result = await getPath({ origin: CURRENT_LOCATION, destination: dest, departAt: when });
+      const origin = await currentOrigin();
+      const result = await getPath({ origin, destination: dest, departAt: when });
       // Mock data always returns the same path, so pin the destination to where that path ends.
       const end = result.recommended.geometry[result.recommended.geometry.length - 1];
       const destination = usingMock ? { ...dest, lat: end[0], lng: end[1] } : dest;
       setTrip({
-        origin: CURRENT_LOCATION,
+        origin,
         destination,
         departAt: when,
         later: departure.later,
@@ -74,7 +76,7 @@ export default function App() {
       });
       setScreen('recommended');
     } catch (e) {
-      setError(`Couldn't find a path right now. ${e.message}. Try again in a moment.`);
+      setError(`Couldn't find a path right now. ${e.message.replace(/\.$/, '')}. Try again in a moment.`);
     } finally {
       setLoading(false);
     }

@@ -1,0 +1,17 @@
+- generic [ref=f11e15]:
+  - button "Back" [ref=f11e16] [cursor=pointer]
+  - generic [ref=f11e19]:
+    - heading "Welcome back" [level=1] [ref=f11e20]
+    - paragraph [ref=f11e21]: Log in to plan your walk.
+  - button "Continue with USC NetID" [ref=f11e22] [cursor=pointer]
+  - generic [ref=f11e25]: or with email
+  - generic [ref=f11e28]:
+    - generic [ref=f11e29]:
+      - text: USC email
+      - textbox "USC email" [ref=f11e30]:
+        - /placeholder: ttrojan@usc.edu
+    - generic [ref=f11e31]:
+      - text: Password
+      - textbox "Password" [ref=f11e32]:
+        - /placeholder: ••••••••
+  - button "Log in" [ref=f11e34] [cursor=pointer]

@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 """HTTP server for Safety Path.
 
-Wraps RouteEngine (safe_route.py) and serves the static PWA from static/.
+Wraps RouteEngine (safe_route.py) and serves the app UI:
+  - frontend/dist/ (the React app, built with `cd frontend && npm run build`) when it exists,
+  - otherwise the older single-page app in static/.
 
 Endpoints:
-    GET  /                    -> static/index.html (SPA entry point)
-    GET  /static/<file>       -> static files (css/js/manifest/icons/sw.js)
-    GET  /manifest.webmanifest -> alias for /static/manifest.webmanifest (so install prompts find it)
-    GET  /sw.js               -> alias for /static/sw.js (must be served from site root)
+    POST /path                -> recommended + fastest path (frontend/docs/API_CONTRACT.md)
     GET  /api/geocode?q=...   -> list of {label, lat, lon, kind}
-    GET  /api/route?from=...&to=...&time=...&safety=... -> full route payload
-    GET  /api/health          -> {ok, edges, dps, lapd, lights}
+    GET  /api/route?from=...&to=...&time=...&safety=... -> detailed route payload (CLI-style)
+    GET  /api/health          -> {ok, edges, dps, lapd, lights, ui}
+    GET  /<anything else>     -> UI files; unknown paths fall back to index.html (SPA routing)
 
 Usage:
     python3 safety_server.py                      # 127.0.0.1:8000
@@ -32,13 +32,20 @@ sys.path.insert(0, HERE)
 import safe_route as sr  # noqa: E402
 
 STATIC_DIR = os.path.join(HERE, "static")
-# Files served at the site root for PWA / CDN reasons (service workers must have a top-level scope).
+DIST_DIR = os.path.join(HERE, "frontend", "dist")
+# Legacy UI only: files served at the site root (service workers need a top-level scope).
 ROOT_ALIASES = {"/sw.js": "sw.js", "/manifest.webmanifest": "manifest.webmanifest",
                 "/favicon.ico": "icon-192.png", "/apple-touch-icon.png": "icon-192.png"}
+MAX_BODY = 16 * 1024
 CONTENT_TYPES = {".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8",
                  ".js": "application/javascript; charset=utf-8", ".json": "application/json",
                  ".webmanifest": "application/manifest+json", ".png": "image/png",
-                 ".svg": "image/svg+xml", ".ico": "image/x-icon", ".map": "application/json"}
+                 ".svg": "image/svg+xml", ".ico": "image/x-icon", ".map": "application/json",
+                 ".woff2": "font/woff2", ".txt": "text/plain; charset=utf-8"}
+
+
+def react_built():
+    return os.path.isfile(os.path.join(DIST_DIR, "index.html"))
 
 
 def parse_latlon_or_text(s):
@@ -65,9 +72,11 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header("Content-Length", str(len(body)))
         self.send_header("Access-Control-Allow-Origin", "*")  # harmless; everything is read-only
         # Short-ish cache for static files so demo iterations show up fast; API never caches.
-        self.send_header("Cache-Control", "no-store" if content_type.startswith("application/json")
-                         else "public, max-age=30, must-revalidate")
-        for k, v in (extra_headers or {}).items():
+        extra_headers = extra_headers or {}
+        if "Cache-Control" not in extra_headers:
+            self.send_header("Cache-Control", "no-store" if content_type.startswith("application/json")
+                             else "public, max-age=30, must-revalidate")
+        for k, v in extra_headers.items():
             self.send_header(k, v)
         self.end_headers()
         self.wfile.write(body)
@@ -75,32 +84,48 @@ class Handler(BaseHTTPRequestHandler):
     def _error(self, status, msg):
         self._send(status, {"error": msg})
 
-    def _serve_file(self, rel_path):
-        safe = os.path.normpath(os.path.join(STATIC_DIR, rel_path))
-        if not safe.startswith(STATIC_DIR + os.sep) or not os.path.isfile(safe):
+    def _serve_file(self, rel_path, base=STATIC_DIR):
+        safe = os.path.normpath(os.path.join(base, rel_path))
+        if not safe.startswith(base + os.sep) or not os.path.isfile(safe):
             return self._error(404, f"not found: {rel_path}")
         ext = os.path.splitext(safe)[1].lower()
         ctype = CONTENT_TYPES.get(ext, "application/octet-stream")
         with open(safe, "rb") as f:
             body = f.read()
-        extra = {"Service-Worker-Allowed": "/"} if rel_path == "sw.js" else None
+        extra = {"Service-Worker-Allowed": "/"} if rel_path == "sw.js" else {}
+        if base == DIST_DIR:
+            # Vite fingerprints /assets/*, so those can be cached forever; everything else revalidates.
+            extra["Cache-Control"] = ("public, max-age=31536000, immutable" if rel_path.startswith("assets/")
+                                      else "no-cache")
         return self._send(200, body, ctype, extra)
+
+    def _serve_ui(self, path):
+        """React build if present (with SPA fallback to index.html), else the legacy static/ UI."""
+        if react_built():
+            rel = path.lstrip("/") or "index.html"
+            if os.path.isfile(os.path.join(DIST_DIR, rel)):
+                return self._serve_file(rel, DIST_DIR)
+            if "." in os.path.basename(rel):
+                return self._error(404, f"not found: {path}")
+            return self._serve_file("index.html", DIST_DIR)
+        if path == "/":
+            return self._serve_file("index.html")
+        if path in ROOT_ALIASES:
+            return self._serve_file(ROOT_ALIASES[path])
+        if path.startswith("/static/"):
+            return self._serve_file(path[len("/static/"):])
+        return self._error(404, f"no route for {path}")
 
     def do_GET(self):
         try:
             url = urllib.parse.urlparse(self.path)
             path, qs = url.path, urllib.parse.parse_qs(url.query)
-            if path == "/":
-                return self._serve_file("index.html")
-            if path in ROOT_ALIASES:
-                return self._serve_file(ROOT_ALIASES[path])
-            if path.startswith("/static/"):
-                return self._serve_file(path[len("/static/"):])
             if path == "/api/health":
                 e = self.engine
                 return self._send(200, {"ok": True, "edges": len(e.graph.edges),
                                          "dps": len(e.dps), "lapd": len(e.lapd),
-                                         "lights": e.light_count, "patrol_polys": len(e.patrol)})
+                                         "lights": e.light_count, "patrol_polys": len(e.patrol),
+                                         "ui": "react" if react_built() else "legacy"})
             if path == "/api/geocode":
                 q = (qs.get("q") or [""])[0].strip()
                 if not q:
@@ -109,15 +134,50 @@ class Handler(BaseHTTPRequestHandler):
                 return self._send(200, self.engine.geocode_text(q, limit=limit))
             if path == "/api/route":
                 return self._route(qs)
-            return self._error(404, f"no route for {path}")
+            if path.startswith("/api/") or path == "/path":
+                return self._error(404 if path != "/path" else 405, f"no route for GET {path}")
+            return self._serve_ui(path)
         except Exception as err:  # keep the server alive; show the stack in the log
+            traceback.print_exc()
+            self._error(500, f"{type(err).__name__}: {err}")
+
+    def do_POST(self):
+        try:
+            path = urllib.parse.urlparse(self.path).path
+            if path != "/path":
+                return self._error(404, f"no route for POST {path}")
+            length = int(self.headers.get("Content-Length") or 0)
+            if length <= 0 or length > MAX_BODY:
+                return self._error(400, "Expected a JSON body.")
+            try:
+                req = json.loads(self.rfile.read(length))
+                origin = (float(req["origin"]["lat"]), float(req["origin"]["lng"]))
+                dest = (float(req["destination"]["lat"]), float(req["destination"]["lng"]))
+            except (ValueError, KeyError, TypeError):
+                return self._error(400, "Body must have origin {lat, lng} and destination {lat, lng}.")
+            depart = req.get("depart_at")
+            try:
+                when = (datetime.fromisoformat(depart).replace(tzinfo=sr.LA) if depart
+                        else datetime.now(sr.LA))
+            except (ValueError, TypeError):
+                return self._error(400, f"Bad depart_at: {depart!r}, expected e.g. 2026-10-17T21:40.")
+            for label, p in (("Your starting point", origin), ("That destination", dest)):
+                if not sr.in_service_area(p):
+                    return self._error(422, f"{label} is outside the area Safety Path covers "
+                                            "(W Adams–W Jefferson, S Vermont–S Figueroa).")
+            result = sr.path_response(self.engine, origin, dest, when)
+            if result is None:
+                return self._error(422, "Start and destination are too close together, "
+                                        "or no walking path connects them.")
+            return self._send(200, result)
+        except Exception as err:
             traceback.print_exc()
             self._error(500, f"{type(err).__name__}: {err}")
 
     def do_OPTIONS(self):  # CORS preflight for anyone embedding the API
         self.send_response(204)
         self.send_header("Access-Control-Allow-Origin", "*")
-        self.send_header("Access-Control-Allow-Methods", "GET")
+        self.send_header("Access-Control-Allow-Methods", "GET, POST")
         self.send_header("Access-Control-Allow-Headers", "Content-Type")
         self.end_headers()
 

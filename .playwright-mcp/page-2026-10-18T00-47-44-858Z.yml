@@ -1,0 +1,36 @@
+- generic [ref=f11e35]:
+  - generic [ref=f11e36]:
+    - generic [ref=f11e37]:
+      - generic [ref=f11e38]: Current location
+      - link "Emergency call 911" [ref=f11e41] [cursor=pointer]:
+        - /url: tel:911
+        - text: SOS
+    - generic [ref=f11e44]:
+      - generic [ref=f11e45]: Hello Trojan 👋
+      - heading "Want to find a safety path?" [level=1] [ref=f11e46]
+    - search [ref=f11e47]:
+      - button "Where to?" [ref=f11e48] [cursor=pointer]
+      - 'button "Departure: Now" [ref=f11e52] [cursor=pointer]': Later
+    - region "Suggested destinations" [ref=f11e56]:
+      - generic [ref=f11e57]:
+        - button "W Adams Blvd & Figueroa North University Park" [ref=f11e58] [cursor=pointer]:
+          - generic [ref=f11e63]:
+            - generic [ref=f11e64]: W Adams Blvd & Figueroa
+            - generic [ref=f11e65]: North University Park
+        - button "W 28th St & S Hoover St North University Park" [ref=f11e68] [cursor=pointer]:
+          - generic [ref=f11e73]:
+            - generic [ref=f11e74]: W 28th St & S Hoover St
+            - generic [ref=f11e75]: North University Park
+        - button "W 30th St & S Vermont Ave North University Park" [ref=f11e78] [cursor=pointer]:
+          - generic [ref=f11e83]:
+            - generic [ref=f11e84]: W 30th St & S Vermont Ave
+            - generic [ref=f11e85]: North University Park
+    - generic [ref=f11e88]:
+      - heading "Walking after dark?" [level=2] [ref=f11e89]
+      - paragraph [ref=f11e90]: Add a friend or family member so they can follow your path and know when you arrive.
+      - button "Add trusted contact" [ref=f11e91] [cursor=pointer]
+  - navigation "Main" [ref=f11e92]:
+    - button "Home" [ref=f11e93] [cursor=pointer]
+    - button "Friends" [ref=f11e96] [cursor=pointer]
+    - button "Activity" [ref=f11e102] [cursor=pointer]
+    - button "Account" [ref=f11e106] [cursor=pointer]

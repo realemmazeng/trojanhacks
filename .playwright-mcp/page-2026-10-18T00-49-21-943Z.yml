@@ -1,0 +1,36 @@
+- generic [ref=f12e358]:
+  - img "Your location along the safety path" [ref=f12e359]:
+    - generic [ref=f12e360]:
+      - generic:
+        - generic:
+          - img:
+            - generic:
+              - generic [ref=f12e361] [cursor=pointer]
+              - generic [ref=f12e362] [cursor=pointer]
+              - generic [ref=f12e363] [cursor=pointer]
+              - generic [ref=f12e364] [cursor=pointer]
+              - generic [ref=f12e365] [cursor=pointer]
+      - generic [ref=f12e366]:
+        - link "Leaflet" [ref=f12e367] [cursor=pointer]:
+          - /url: https://leafletjs.com
+        - text: "| ©"
+        - link "OpenStreetMap" [ref=f12e372] [cursor=pointer]:
+          - /url: https://www.openstreetmap.org/copyright
+        - text: contributors
+  - generic [ref=f12e378]:
+    - generic [ref=f12e379]: Head east on W Jefferson Blvd
+    - generic [ref=f12e380]: Then turn left onto University Ave in 111 ft
+  - generic [ref=f12e381]:
+    - generic [ref=f12e382]:
+      - generic [ref=f12e383]:
+        - generic [ref=f12e384]: 15 min left
+        - generic [ref=f12e385]: Arrive 18:04 · 0.7 mi to go
+      - button "End" [ref=f12e386] [cursor=pointer]
+    - progressbar "Path progress" [ref=f12e387]
+    - generic [ref=f12e388]:
+      - button "Share trip" [ref=f12e389] [cursor=pointer]
+      - link "Emergency call 911" [ref=f12e396] [cursor=pointer]:
+        - /url: tel:911
+        - text: SOS
+    - 'button "Demo: step off the path" [ref=f12e399] [cursor=pointer]'
+    - paragraph [ref=f12e400]: Location is used only during this walk. Path doesn't guarantee safety.

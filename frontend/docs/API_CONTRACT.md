@@ -44,5 +44,10 @@ Factor meanings (must match the PRD):
 Non-2xx status with `{ "error": "message" }`. The app shows the message and lets the user retry.
 
 ### Backend notes
-- Allow CORS from the frontend's origin (dev: `http://localhost:5173`).
-- Paths outside the service area (Adams–Jefferson × Vermont–Figueroa) should return 422 with an error message.
+- Implemented by `safety_server.py` (`path_response()` in `safe_route.py`). CORS is open; in dev, Vite proxies `/path`.
+- Start or destination outside the service area (Adams–Jefferson × Vermont–Figueroa) returns 422 with an error message;
+  a malformed body returns 400.
+- Current values: `alert_window_days` = 30 (DPS alerts + LAPD incidents within 50 m of the path);
+  `lighting_pct` = share of the path with a streetlight within 35 m; `activity_score` = time-of-day baseline by
+  street type, raised by live LA Metro Bike Share activity (not OSM opening hours yet).
+- `steps[].instruction` is generated from street names and turn angles ("Turn left onto University Ave").
