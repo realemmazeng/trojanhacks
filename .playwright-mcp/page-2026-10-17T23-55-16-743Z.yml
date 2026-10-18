@@ -1,0 +1,25 @@
+- generic [ref=f5e2]:
+  - region "Plan a walk" [ref=f5e3]:
+    - generic [ref=f5e4]:
+      - heading "Safety Path USC" [level=1] [ref=f5e5]
+      - button "About" [ref=f5e6] [cursor=pointer]: ⓘ
+    - generic [ref=f5e8]:
+      - generic [ref=f5e9]: ●
+      - textbox "● Use my location" [ref=f5e10]:
+        - /placeholder: From — address, intersection, or lat,lon
+      - button "Use my location" [ref=f5e11] [cursor=pointer]: ⌖
+    - generic [ref=f5e13]:
+      - generic [ref=f5e14]: ●
+      - textbox "●" [ref=f5e15]:
+        - /placeholder: To
+    - generic [ref=f5e16]:
+      - generic [ref=f5e17]:
+        - generic [ref=f5e18]: Depart
+        - textbox "Depart" [ref=f5e19]
+      - generic [ref=f5e20]:
+        - generic [ref=f5e21]: Safety
+        - slider "Safety balanced" [ref=f5e22]: "1"
+        - generic [ref=f5e23]: balanced
+      - button "Find route" [ref=f5e24] [cursor=pointer]
+    - status [ref=f5e25]
+  - generic "Map" [ref=f5e26]

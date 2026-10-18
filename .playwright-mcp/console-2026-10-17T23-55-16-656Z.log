@@ -1,0 +1,5 @@
+[      43ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://unpkg.com/leaflet@1.9.4/dist/leaflet.css:0
+[      43ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://unpkg.com/leaflet@1.9.4/dist/leaflet.js:0
+[      67ms] ReferenceError: L is not defined
+    at http://127.0.0.1:8010/static/app.js:26:15
+    at http://127.0.0.1:8010/static/app.js:326:3

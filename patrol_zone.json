@@ -1,0 +1,22 @@
+{
+  "type": "FeatureCollection",
+  "name": "USC DPS UPC Patrol Area (approximation)",
+  "note": "Hardcoded approximation of the published UPC Patrol Area (~2.5 sq mi around University Park Campus). Covers Vermont→Flower and MLK→Adams, which is where DPS routinely patrols and runs campus cruisers / Lyft safe-ride. Replace with coordinates extracted from the DPS PDF (dps.usc.edu/wp-content/uploads/2025/01/UPC-Patrol-Area.pdf) when a precise boundary is needed.",
+  "source": "https://dps.usc.edu/patrol/",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {"name": "UPC Patrol Area"},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-118.3010, 34.0335],
+          [-118.2695, 34.0335],
+          [-118.2695, 34.0090],
+          [-118.3010, 34.0090],
+          [-118.3010, 34.0335]
+        ]]
+      }
+    }
+  ]
+}

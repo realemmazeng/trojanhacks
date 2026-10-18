@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#15803d">
+<meta name="description" content="Safety-aware walking routes around USC.">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Safety Path">
+<title>Safety Path — USC</title>
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" type="image/png" href="/static/icon-192.png">
+<link rel="apple-touch-icon" href="/static/icon-192.png">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="/static/style.css?v=4">
+</head>
+<body>
+<div id="app">
+  <!-- Floating search card (top overlay) -->
+  <section id="search" aria-label="Plan a walk">
+    <header>
+      <h1>Safety Path <span class="muted">USC</span></h1>
+      <button id="info-btn" class="icon-btn" aria-label="About" title="About">ⓘ</button>
+    </header>
+    <div class="input-row">
+      <label class="in-wrap"><span class="pin from">●</span>
+        <input id="from" type="text" placeholder="From — address, intersection, or lat,lon"
+               autocomplete="off" autocorrect="off" spellcheck="false">
+        <button id="gps-btn" class="icon-btn" aria-label="Use my location" title="Use my location">⌖</button>
+      </label>
+      <ul class="suggest" id="from-suggest" role="listbox" hidden></ul>
+    </div>
+    <div class="input-row">
+      <label class="in-wrap"><span class="pin to">●</span>
+        <input id="to" type="text" placeholder="To"
+               autocomplete="off" autocorrect="off" spellcheck="false">
+      </label>
+      <ul class="suggest" id="to-suggest" role="listbox" hidden></ul>
+    </div>
+    <div class="controls">
+      <label class="field"><span>Depart</span>
+        <input id="time" type="datetime-local">
+      </label>
+      <label class="field"><span>Safety</span>
+        <input id="safety" type="range" min="0" max="2" step="0.25" value="1">
+        <span id="safety-label" class="muted" aria-live="polite">balanced</span>
+      </label>
+      <button id="go-btn" class="primary">Find route</button>
+    </div>
+    <div id="status" class="muted" role="status" aria-live="polite"></div>
+  </section>
+
+  <!-- Map -->
+  <div id="map" aria-label="Map"></div>
+
+  <!-- Bottom sheet / side panel: route details -->
+  <aside id="result" hidden aria-label="Route details">
+    <button id="result-close" class="icon-btn" aria-label="Close details" title="Close">×</button>
+    <h2 id="result-title">Recommended route</h2>
+    <div class="metrics" id="metrics"></div>
+    <section class="group">
+      <h3>Why this route?</h3>
+      <ul id="reasons"></ul>
+    </section>
+    <section class="group">
+      <h3>Directions</h3>
+      <ol id="steps"></ol>
+    </section>
+    <section class="group">
+      <h3>Fastest route</h3>
+      <div class="metrics compare" id="fast-metrics"></div>
+    </section>
+    <div class="actions">
+      <button id="start-btn" class="primary">Start walking</button>
+    </div>
+    <footer>
+      <details>
+        <summary>Data sources</summary>
+        <ul id="sources"></ul>
+      </details>
+      <p class="disclaimer" id="disclaimer"></p>
+    </footer>
+  </aside>
+
+  <!-- Live-navigation overlay -->
+  <div id="livenav" hidden aria-label="Live navigation">
+    <div class="live-bar">
+      <div class="live-progress">
+        <div id="live-remaining">— m to destination</div>
+        <div id="live-off" class="off" hidden>Off route — rerouting…</div>
+      </div>
+      <button id="sos-btn" class="danger">SOS</button>
+      <button id="stop-btn" class="icon-btn" aria-label="Stop navigation" title="Stop">×</button>
+    </div>
+  </div>
+
+  <!-- SOS action sheet -->
+  <dialog id="sos-sheet">
+    <h3>Need help?</h3>
+    <a class="sos-action" href="tel:+12137404321">
+      <strong>Call USC DPS Emergency</strong>
+      <span class="muted">+1 (213) 740-4321</span>
+    </a>
+    <a class="sos-action danger" href="tel:911">
+      <strong>Call 911</strong>
+      <span class="muted">City emergency services</span>
+    </a>
+    <button class="sos-action" id="share-loc">
+      <strong>Copy my location</strong>
+      <span class="muted" id="share-loc-detail">Puts a Google Maps link in your clipboard</span>
+    </button>
+    <button class="sos-action" id="sos-cancel">Cancel</button>
+  </dialog>
+
+  <!-- About dialog -->
+  <dialog id="about">
+    <h3>About Safety Path</h3>
+    <p>This app recommends a walking route around USC that balances travel time with lighting,
+    recent crime data, foot traffic, and USC DPS patrol coverage.</p>
+    <p class="muted">It does not guarantee safety. If you feel unsafe, call USC DPS at
+    +1 (213) 740-4321 or 911.</p>
+    <button class="primary" id="about-close">OK</button>
+  </dialog>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="/static/nav.js?v=4"></script>
+<script src="/static/app.js?v=4"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+- generic [ref=f9e2]:
+  - region "Plan a walk" [ref=f9e3]:
+    - generic [ref=f9e4]:
+      - heading "Safety Path USC" [level=1] [ref=f9e5]
+      - button "About" [ref=f9e6] [cursor=pointer]: ⓘ
+    - generic [ref=f9e8]:
+      - generic [ref=f9e9]: ●
+      - textbox "● Use my location" [ref=f9e10]:
+        - /placeholder: From — address, intersection, or lat,lon
+        - text: USC Village
+      - button "Use my location" [ref=f9e11] [cursor=pointer]: ⌖
+    - generic [ref=f9e13]:
+      - generic [ref=f9e14]: ●
+      - textbox "●" [ref=f9e15]:
+        - /placeholder: To
+        - text: 28th & Orchard
+    - generic [ref=f9e16]:
+      - generic [ref=f9e17]:
+        - generic [ref=f9e18]: Depart
+        - textbox "Depart" [ref=f9e19]: 2026-10-18T00:00
+      - generic [ref=f9e20]:
+        - generic [ref=f9e21]: Safety
+        - slider "Safety balanced" [ref=f9e22]: "1"
+        - generic [ref=f9e23]: balanced
+      - button "Routing…" [disabled] [ref=f9e24]
+    - status [ref=f9e25]: Finding the safer route…
+  - generic "Map" [ref=f9e26]:
+    - generic:
+      - generic:
+        - generic [ref=f9e27]:
+          - button "Zoom in" [ref=f9e28] [cursor=pointer]: +
+          - button "Zoom out" [ref=f9e29] [cursor=pointer]: −
+        - generic [ref=f9e30]:
+          - link "Leaflet" [ref=f9e31] [cursor=pointer]:
+            - /url: https://leafletjs.com
+          - text: "| © OpenStreetMap contributors"

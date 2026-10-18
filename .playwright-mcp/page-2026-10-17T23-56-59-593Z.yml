@@ -1,0 +1,97 @@
+- generic [ref=f7e2]:
+  - region "Plan a walk" [ref=f7e3]:
+    - generic [ref=f7e4]:
+      - heading "Safety Path USC" [level=1] [ref=f7e5]
+      - button "About" [ref=f7e6] [cursor=pointer]: ⓘ
+    - generic [ref=f7e8]:
+      - generic [ref=f7e9]: ●
+      - textbox "● Use my location" [ref=f7e10]:
+        - /placeholder: From — address, intersection, or lat,lon
+        - text: USC Village
+      - button "Use my location" [ref=f7e11] [cursor=pointer]: ⌖
+    - generic [ref=f7e13]:
+      - generic [ref=f7e14]: ●
+      - textbox "●" [ref=f7e15]:
+        - /placeholder: To
+        - text: 28th & Orchard
+    - generic [ref=f7e16]:
+      - generic [ref=f7e17]:
+        - generic [ref=f7e18]: Depart
+        - textbox "Depart" [ref=f7e19]: 2026-10-18T00:00
+      - generic [ref=f7e20]:
+        - generic [ref=f7e21]: Safety
+        - slider "Safety balanced" [ref=f7e22]: "1"
+        - generic [ref=f7e23]: balanced
+      - button "Find route" [ref=f7e36] [cursor=pointer]
+    - status [ref=f7e25]
+  - generic "Map" [ref=f7e26]:
+    - generic:
+      - generic:
+        - img:
+          - generic:
+            - generic [ref=f7e37] [cursor=pointer]
+            - generic [ref=f7e38] [cursor=pointer]
+      - generic:
+        - generic [ref=f7e39] [cursor=pointer]
+        - generic [ref=f7e41] [cursor=pointer]
+    - generic:
+      - generic:
+        - generic [ref=f7e27]:
+          - button "Zoom in" [ref=f7e28] [cursor=pointer]: +
+          - button "Zoom out" [ref=f7e29] [cursor=pointer]: −
+        - generic [ref=f7e30]:
+          - link "Leaflet" [ref=f7e31] [cursor=pointer]:
+            - /url: https://leafletjs.com
+          - text: "| © OpenStreetMap contributors"
+  - complementary "Route details" [ref=f7e43]:
+    - button "Close details" [ref=f7e44] [cursor=pointer]: ×
+    - heading "Recommended route" [level=2] [ref=f7e45]
+    - generic [ref=f7e46]:
+      - generic [ref=f7e47]:
+        - generic [ref=f7e48]: 10.7 min
+        - generic [ref=f7e49]: 836 m
+      - generic [ref=f7e50]:
+        - generic [ref=f7e51]: 100%
+        - generic [ref=f7e52]: in DPS patrol
+      - generic [ref=f7e53]:
+        - generic [ref=f7e54]: "0.29"
+        - generic [ref=f7e55]: lighting
+      - generic [ref=f7e56]:
+        - generic [ref=f7e57]: "4"
+        - generic [ref=f7e58]: DPS alerts <60 m
+    - generic [ref=f7e59]:
+      - heading "Why this route?" [level=3] [ref=f7e60]
+      - list [ref=f7e61]:
+        - listitem [ref=f7e62]: Streetlights are 1.9× denser along this route.
+        - listitem [ref=f7e63]: Avoids higher-crime segments (crime risk 0.171 vs 0.333).
+        - listitem [ref=f7e64]: Keeps you on better-lit streets after dark.
+        - listitem [ref=f7e65]: Adds 0.5 min vs. the fastest route.
+    - generic [ref=f7e66]:
+      - heading "Directions" [level=3] [ref=f7e67]
+      - list [ref=f7e68]:
+        - listitem [ref=f7e69]: campus walkway — 77 m
+        - listitem [ref=f7e70]: sidewalk along McClintock Avenue — 168 m
+        - listitem [ref=f7e71]: sidewalk along West Jefferson Boulevard — 109 m
+        - listitem [ref=f7e72]: Orchard Avenue — 304 m
+        - listitem [ref=f7e73]: West 29th Street — 80 m
+        - listitem [ref=f7e74]: Orchard Avenue — 99 m
+    - generic [ref=f7e75]:
+      - heading "Fastest route" [level=3] [ref=f7e76]
+      - generic [ref=f7e77]:
+        - generic [ref=f7e78]:
+          - generic [ref=f7e79]: 10.2 min
+          - generic [ref=f7e80]: fastest
+        - generic [ref=f7e81]:
+          - generic [ref=f7e82]: 100%
+          - generic [ref=f7e83]: in DPS patrol
+        - generic [ref=f7e84]:
+          - generic [ref=f7e85]: "0.16"
+          - generic [ref=f7e86]: lighting
+        - generic [ref=f7e87]:
+          - generic [ref=f7e88]: +0.5 min
+          - generic [ref=f7e89]: tradeoff
+    - button "Start walking" [ref=f7e91] [cursor=pointer]
+    - generic [ref=f7e92]:
+      - group [ref=f7e93]:
+        - generic "Data sources" [ref=f7e94] [cursor=pointer]
+      - paragraph [ref=f7e95]: This route is informational and does not guarantee safety. Trust your instincts, stay aware of your surroundings, and call USC DPS at 213-740-4321 or 911 if you feel unsafe.

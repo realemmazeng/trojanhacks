@@ -1,0 +1,17 @@
+{
+  "name": "Safety Path — USC",
+  "short_name": "Safety Path",
+  "description": "Safety-aware walking routes around USC.",
+  "start_url": "/?src=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#15803d",
+  "background_color": "#fafaf9",
+  "lang": "en-US",
+  "icons": [
+    {"src": "/static/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
+    {"src": "/static/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ],
+  "categories": ["navigation", "utilities"]
+}
