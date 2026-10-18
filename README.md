@@ -12,14 +12,17 @@ It's a phone-first web app that students can install on their home screen. The i
 - **Start point:** your phone's GPS location when you're inside the service area; otherwise a stand-in point on campus.
 - **Leave now or plan for later:** lighting, darkness, street activity and the timing of past incidents all depend on when you walk.
 - **One recommended path next to the fastest path** on a dark map, with walking times and the extra minutes.
+- **Route preference slider** from Fastest to Safest, on the route screen. Moving it re-plans the path, and the app remembers your setting.
 - **"Why this path?"**: short reasons, plus a details screen comparing both paths on lighting coverage, street activity, USC patrol coverage, recent alerts and walking time.
 - **Data sources** with last-updated dates, and the disclaimer directly above "Start walking".
-- **Live tracking:**
+- **Live tracking with your phone's real GPS:**
+  - your position on the map, with a GPS-accuracy halo
   - turn-by-turn instructions
   - time and distance left, and arrival time
-  - a "You've left the safety path" alert (more than 30 m off for 3 readings in a row)
-  - an "Arrived safely" screen
-- **SOS** buttons on Home and during tracking (calls 911).
+  - more than 30 m off the path for 10 seconds: a "You've left the safety path" alert, then an automatic new path from where you are ("New path from here" does it right away)
+  - keeps the screen awake where the phone allows it
+  - an "Arrived safely" screen within 25 m of the destination
+- **SOS sheet** on Home and during tracking: call USC DPS, call 911, or copy a Google Maps link to your location.
 - **Trusted contacts, sharing and walk history:** stored on the phone. Sharing records who a walk was shared with, but doesn't send messages yet.
 - **Installable:** add it to your home screen and it opens full screen. The app itself loads offline.
 
@@ -97,7 +100,6 @@ cd frontend && npm run dev      # http://localhost:5173, sends /path and /api to
 
 Optional settings live in `frontend/.env` (see `frontend/.env.example`):
 - `VITE_USE_MOCK=1` uses the sample path instead of the backend.
-- `VITE_TRACKING_MODE=gps` uses real phone location during a walk. The default, `simulate`, replays the walk with a "step off the path" demo button.
 
 ### Use it on your phone
 
@@ -110,7 +112,7 @@ cloudflared tunnel --url http://127.0.0.1:8000
 
 Open the `https://….trycloudflare.com` address it prints on your phone, then choose **Add to Home Screen**. The address changes every time you restart the tunnel.
 
-For real walking, build with `VITE_TRACKING_MODE=gps` set (`echo VITE_TRACKING_MODE=gps > frontend/.env`, then `npm run build`).
+Tracking always uses the phone's real location. On a laptop with no location access, it stays on "Finding your location…".
 
 ### Optional: better live data
 
@@ -133,7 +135,7 @@ The CLI prints both routes, the reasons and the directions, and writes `route_ma
 
 | Endpoint | Returns |
 |---|---|
-| `POST /path` | The app's endpoint, specified in [`frontend/docs/API_CONTRACT.md`](frontend/docs/API_CONTRACT.md). Returns 422 when the start or destination is outside the service area. |
+| `POST /path` | The app's endpoint, specified in [`frontend/docs/API_CONTRACT.md`](frontend/docs/API_CONTRACT.md). Takes an optional `safety` from 0 (fastest) to 2 (safest), default 1. Returns 422 when the start or destination is outside the service area. |
 | `GET /api/geocode?q=…&limit=5` | `[{label, lat, lon, kind}]` |
 | `GET /api/route?from=…&to=…&time=ISO&safety=1` | A more detailed route payload (risk, lighting, busyness, steps, live signals) |
 | `GET /api/health` | Counts of loaded street segments, incidents, streetlights, and which UI is being served |
@@ -164,6 +166,7 @@ static/                  Older single-page UI; served only if frontend/dist hasn
 - **GPS stops when the screen locks**, especially on iPhone. Background tracking would need a native wrapper such as Capacitor.
 - **Placeholders:** login doesn't authenticate, and sharing doesn't send anything yet. Contacts and history live in the phone's browser storage.
 - **Start point:** if the location prompt is ignored, the app waits 6 seconds before falling back to the campus stand-in.
-- Not built: rerouting during a walk (out of scope in the PRD), voice directions, push notifications, game-day/event awareness.
+- **Rerouting needs the service area:** if you wander outside it, no new path is found and the off-path banner shows why.
+- Not built: voice directions, push notifications, game-day/event awareness.
 
 # trojanhacks

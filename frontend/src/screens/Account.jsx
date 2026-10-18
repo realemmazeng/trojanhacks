@@ -1,12 +1,11 @@
 import Icon from '../components/Icon.jsx';
 import { usingMock } from '../api.js';
 
-const MODE = import.meta.env.VITE_TRACKING_MODE === 'gps' ? 'Phone GPS' : 'Simulated walk (demo)';
 
 export default function Account({ user, friendsCount, onGoFriends, onLogout }) {
   const rows = [
     { icon: 'users', title: 'Trusted contacts', sub: `${friendsCount} saved`, onClick: onGoFriends },
-    { icon: 'pin', title: 'Location tracking', sub: `${MODE} · only during a walk` },
+    { icon: 'pin', title: 'Location tracking', sub: 'Phone GPS · only during a walk' },
     { icon: 'info', title: 'Data sources', sub: usingMock ? 'Sample data (backend not connected)' : 'City of LA streetlights · USC DPS' },
     { icon: 'shield', title: 'Emergency', sub: 'SOS calls 911' },
   ];

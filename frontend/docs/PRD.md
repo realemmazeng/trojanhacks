@@ -41,16 +41,16 @@ Log in → Home: "Where to?" (origin = current location) → enter destination �
 - Disclaimer that the path does not guarantee safety, directly above "Start walking"
 
 ### Could Have (designed and prototyped)
-- Live tracking: location on the path, remaining time/distance, off-path alert (> 30 m for 3 readings) with "Back to path"
+- Route preference: a Fastest ↔ Safest slider on the Recommended screen that re-plans the path
+- Live tracking with real GPS: location on the path, remaining time/distance, off-path alert (> 30 m for 10 s) followed by an automatic new path from the current position
 - Arrival screen: "Arrived safely ❤️" within 25 m of the destination
-- Emergency calling: SOS (911) on Home and Tracking
+- Emergency calling: SOS sheet (USC DPS, 911, copy location link) on Home and Tracking
 - Path sharing with friends and family: trusted contacts, auto-share, share picker on Recommended and Tracking
 - Activity history: past walks, sharing status, Walk again
 
 ### Out of Scope
 - Crime prediction
 - Special events information (e.g., gameday)
-- Automatic rerouting
 - Turn-by-turn voice navigation
 
 ## USC Resource Integration

@@ -1,0 +1,8 @@
+- generic [ref=f14e4]:
+  - generic [ref=f14e5]:
+    - img "Safety Path logo" [ref=f14e7]
+    - heading "Safety Path at USC" [level=1] [ref=f14e10]: Safety Pathat USC
+    - paragraph [ref=f14e11]: Walk home smarter around USC,not just faster.
+  - generic [ref=f14e12]:
+    - button "Get started" [ref=f14e13] [cursor=pointer]
+    - generic [ref=f14e14]: For USC students · North University Park

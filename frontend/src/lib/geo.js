@@ -67,8 +67,3 @@ export function splitPath(path, d, cum = cumulativeLengths(path)) {
   const idx = i === -1 ? path.length : i;
   return [[...path.slice(0, idx), p], [p, ...path.slice(idx)]];
 }
-
-/** Offset a point by metres east/north (used to simulate leaving the path). */
-export function offset(p, eastM, northM) {
-  return fromXY([eastM, northM], p);
-}

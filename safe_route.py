@@ -1180,10 +1180,11 @@ def _factors(r):
             "recent_alerts": r["recent_alerts"]}
 
 
-def contract_reasons(rf, ff, same=False):
+def contract_reasons(rf, ff, same=False, safety=1.0):
     """Short reasons in the frontend's voice; only factors where the recommended path is better."""
     if same:
-        return ["The fastest path is also the best-scoring path for this trip"]
+        return (["Fastest path, as set by your route preference"] if safety == 0
+                else ["The fastest path is also the best-scoring path for this trip"])
     out = []
     if rf["lighting_pct"] - ff["lighting_pct"] >= 5:
         out.append(f"Greater lighting coverage ({rf['lighting_pct']}% vs {ff['lighting_pct']}%)")
@@ -1216,9 +1217,12 @@ def fastest_summary(rf, ff, same):
     return text[0].upper() + text[1:]
 
 
-def path_response(engine, origin, dest, when):
-    """Build the POST /path response described in frontend/docs/API_CONTRACT.md."""
-    result = engine.route(origin, dest, when)
+def path_response(engine, origin, dest, when, safety=1.0):
+    """Build the POST /path response described in frontend/docs/API_CONTRACT.md.
+
+    `safety` is the route-preference slider: 0 = fastest only, 1 = balanced, 2 = avoid risk most.
+    """
+    result = engine.route(origin, dest, when, safety=safety)
     if result is None:
         return None
     rec, fast = result["recommended"], result["fastest"]
@@ -1246,11 +1250,12 @@ def path_response(engine, origin, dest, when):
     return {
         "recommended": {"minutes": max(1, round(rec["minutes"])), "distance_m": rec["length_m"],
                         "geometry": rec["coords"], "steps": instructions(rec["coords"], rec["step_detail"]),
-                        "factors": rf, "reasons": contract_reasons(rf, ff, same)},
+                        "factors": rf, "reasons": contract_reasons(rf, ff, same, safety)},
         "fastest": {"minutes": max(1, round(fast["minutes"])), "distance_m": fast["length_m"],
                     "geometry": fast["coords"], "factors": ff, "summary": fastest_summary(rf, ff, same)},
         "extra_minutes": max(0, round(rec["minutes"]) - round(fast["minutes"])),
         "alert_window_days": ALERT_WINDOW_DAYS,
+        "safety": safety,
         "data_sources": sources,
         "updated_at": now,
         "disclaimer": "This path doesn't guarantee your safety.",

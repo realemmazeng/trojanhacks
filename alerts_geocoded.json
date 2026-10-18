@@ -4,2049 +4,2254 @@
     "lon": -118.2787529,
     "method": "intersection",
     "offense": "Aggravated Assault",
-    "severity": 3.5,
+    "severity": 7.0,
     "occurred_at": "2026-10-13T20:46:00",
     "location": "LA Metro Station platform at Jefferson Boulevard and Flower Street, Los Angeles, CA 90007",
-    "url": "https://dps.usc.edu/2026/10/13/aggravated-assault-31/"
+    "url": "https://dps.usc.edu/2026/10/13/aggravated-assault-31/",
+    "source": "DPS"
   },
   {
     "lat": 34.01827575,
     "lon": -118.28232065,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2026-10-13T17:47:00",
     "location": "Exposition Boulevard & Figueroa Street, Los Angeles, CA 90007",
-    "url": "https://dps.usc.edu/2026/10/13/robbery-179/"
+    "url": "https://dps.usc.edu/2026/10/13/robbery-179/",
+    "source": "DPS"
   },
   {
     "lat": 34.02861205237,
     "lon": -118.293107465744,
     "method": "block",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2026-10-04T11:14:00",
     "location": "1400 block of 29th Street, Los Angeles, CA 90007",
-    "url": "https://dps.usc.edu/2026/10/04/robbery-178/"
+    "url": "https://dps.usc.edu/2026/10/04/robbery-178/",
+    "source": "DPS"
   },
   {
     "lat": 34.028563493577,
     "lon": -118.283076992445,
     "method": "block",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2026-09-30T20:40:00",
     "location": "900 block of 28th Street, Los Angeles, CA 90007",
-    "url": "https://dps.usc.edu/2026/10/01/burglary-54/"
+    "url": "https://dps.usc.edu/2026/10/01/burglary-54/",
+    "source": "DPS"
   },
   {
     "lat": 34.028263602196,
     "lon": -118.282402536235,
     "method": "block",
     "offense": "Sexual Battery/Fondling",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2026-09-27T20:15:00",
     "location": "800 block of 28th Street, Los Angeles, CA 90007",
-    "url": "https://dps.usc.edu/2026/09/27/sexual-battery-fondling-39/"
+    "url": "https://dps.usc.edu/2026/09/27/sexual-battery-fondling-39/",
+    "source": "DPS"
   },
   {
     "lat": 34.022826831782,
     "lon": -118.295980260188,
     "method": "block",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2026-09-21T02:11:00",
     "location": "1200 block of 36th Street, Los Angeles, CA 90007",
-    "url": "https://dps.usc.edu/2026/09/21/burglary-51/"
+    "url": "https://dps.usc.edu/2026/09/21/burglary-51/",
+    "source": "DPS"
   },
   {
     "lat": 34.026458943026,
     "lon": -118.278325360427,
     "method": "block",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2026-09-17T23:05:00",
     "location": "600 block of 28th Street, Los Angeles, CA 90007",
-    "url": "https://dps.usc.edu/2026/09/18/burglary-50/"
+    "url": "https://dps.usc.edu/2026/09/18/burglary-50/",
+    "source": "DPS"
   },
   {
     "lat": 34.0235169,
     "lon": -118.2789765,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2026-09-13T03:10:00",
     "location": "32nd Street & Figueoa Street, Los Angeles, CA 90007",
-    "url": "https://dps.usc.edu/2026/09/13/robbery-177/"
+    "url": "https://dps.usc.edu/2026/09/13/robbery-177/",
+    "source": "DPS"
   },
   {
     "lat": 34.024470855177,
     "lon": -118.2959582912,
     "method": "block",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2026-08-28T01:15:00",
     "location": "1200 block of 35th Street, Los Angeles, CA 90007",
-    "url": "https://dps.usc.edu/2026/08/28/burglary-49/"
+    "url": "https://dps.usc.edu/2026/08/28/burglary-49/",
+    "source": "DPS"
   },
   {
     "lat": 34.0260271,
     "lon": -118.2758599,
     "method": "intersection",
     "offense": "Aggravated Assault & Robbery",
-    "severity": 3.5,
+    "severity": 7.0,
     "occurred_at": "2026-08-12T18:24:00",
     "location": "At the intersection of 28th Street and Flower Street, Los Angeles, CA 90007",
-    "url": "https://dps.usc.edu/2026/08/12/aggravated-assault-robbery-2/"
+    "url": "https://dps.usc.edu/2026/08/12/aggravated-assault-robbery-2/",
+    "source": "DPS"
   },
   {
     "lat": 34.032446177274,
     "lon": -118.281802652152,
     "method": "block",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2026-08-11T11:15:00",
     "location": "2300 block of Portland Street, Los Angeles, CA 90007",
-    "url": "https://dps.usc.edu/2026/08/11/burglary-47/"
+    "url": "https://dps.usc.edu/2026/08/11/burglary-47/",
+    "source": "DPS"
   },
   {
     "lat": 34.0255479,
     "lon": -118.2882466,
     "method": "intersection",
     "offense": "Battery",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2026-07-05T16:09:00",
     "location": "Near the intersection of Jefferson Boulevard and Orchard Avenue near UPC",
-    "url": "https://dps.usc.edu/2026/07/06/battery-6/"
+    "url": "https://dps.usc.edu/2026/07/06/battery-6/",
+    "source": "DPS"
   },
   {
     "lat": 34.031235966804,
     "lon": -118.283072711654,
     "method": "block",
     "offense": "Sexual Battery/Fondling",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2026-05-11T11:23:00",
     "location": "900 block of Adams Boulevard, Los Angeles, CA 90007",
-    "url": "https://dps.usc.edu/2026/05/11/sexual-battery-fondling-38/"
+    "url": "https://dps.usc.edu/2026/05/11/sexual-battery-fondling-38/",
+    "source": "DPS"
   },
   {
     "lat": 34.01825115,
     "lon": -118.2915529,
     "method": "intersection",
     "offense": "Sexual Battery/Fondling",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2026-05-02T21:30:00",
     "location": "Exposition Boulevard, east of Vermont Avenue, north sidewalk",
-    "url": "https://dps.usc.edu/2026/05/05/sexual-battery-fondling-37/"
+    "url": "https://dps.usc.edu/2026/05/05/sexual-battery-fondling-37/",
+    "source": "DPS"
   },
   {
     "lat": 34.0171146,
     "lon": -118.28164,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2026-04-28T20:47:00",
     "location": "37th Place and Flower Street",
-    "url": "https://dps.usc.edu/2026/04/30/robbery-174/"
+    "url": "https://dps.usc.edu/2026/04/30/robbery-174/",
+    "source": "DPS"
   },
   {
     "lat": 34.0178208,
     "lon": -118.2810919,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2026-04-26T16:15:00",
     "location": "Flower Street and 37th Street",
-    "url": "https://dps.usc.edu/2026/04/28/robbery-173/"
+    "url": "https://dps.usc.edu/2026/04/28/robbery-173/",
+    "source": "DPS"
   },
   {
     "lat": 34.022313311755,
     "lon": -118.279803065745,
     "method": "address",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2026-04-18T13:57:00",
     "location": "3335 Figueroa Street",
-    "url": "https://dps.usc.edu/2026/04/21/robbery-172/"
+    "url": "https://dps.usc.edu/2026/04/21/robbery-172/",
+    "source": "DPS"
   },
   {
     "lat": 34.018709079384,
     "lon": -118.281943703523,
     "method": "address",
     "offense": "Robbery",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2026-04-09T13:30:00",
     "location": "3584 Figueroa Street, sidewalk",
-    "url": "https://dps.usc.edu/2026/04/10/robbery-171/"
+    "url": "https://dps.usc.edu/2026/04/10/robbery-171/",
+    "source": "DPS"
   },
   {
     "lat": 34.0219044,
     "lon": -118.2800026,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2026-04-06T20:00:00",
     "location": "Jefferson Boulevard and Figueroa Street, southwest corner",
-    "url": "https://dps.usc.edu/2026/04/07/robbery-170/"
+    "url": "https://dps.usc.edu/2026/04/07/robbery-170/",
+    "source": "DPS"
   },
   {
     "lat": 34.0220568,
     "lon": -118.2915579,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2026-03-27T19:55:00",
     "location": "Vermont Avenue and 36th Place, northeast corner",
-    "url": "https://dps.usc.edu/2026/03/29/robbery-169/"
+    "url": "https://dps.usc.edu/2026/03/29/robbery-169/",
+    "source": "DPS"
   },
   {
     "lat": 34.025633513353,
     "lon": -118.277530532286,
     "method": "address",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2026-03-06T04:00:00",
     "location": "2912 Figueroa Street",
-    "url": "https://dps.usc.edu/2026/03/06/robbery-168/"
+    "url": "https://dps.usc.edu/2026/03/06/robbery-168/",
+    "source": "DPS"
   },
   {
     "lat": 34.023720299999994,
     "lon": -118.28403515,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2026-02-20T20:05:00",
     "location": "Jefferson Boulevard at Hoover Street, south sidewalk",
-    "url": "https://dps.usc.edu/2026/02/21/robbery-167/"
+    "url": "https://dps.usc.edu/2026/02/21/robbery-167/",
+    "source": "DPS"
   },
   {
     "lat": 34.026962160251,
     "lon": -118.276684145066,
     "method": "address",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2026-02-19T19:50:00",
     "location": "Taco Bell, 2722 Figueroa Street",
-    "url": "https://dps.usc.edu/2026/02/20/robbery-166/"
+    "url": "https://dps.usc.edu/2026/02/20/robbery-166/",
+    "source": "DPS"
   },
   {
     "lat": 34.02915,
     "lon": -118.28396484999999,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2026-02-12T22:00:00",
     "location": "28th Street west of Hoover Street, south sidewalk",
-    "url": "https://dps.usc.edu/2026/02/15/robbery-165/"
+    "url": "https://dps.usc.edu/2026/02/15/robbery-165/",
+    "source": "DPS"
   },
   {
     "lat": 34.020274107132,
     "lon": -118.285310447654,
     "method": "address",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2026-02-11T18:37:00",
     "location": "3601 Trousdale Parkway-center campus",
-    "url": "https://dps.usc.edu/2026/02/12/robbery-164/"
+    "url": "https://dps.usc.edu/2026/02/12/robbery-164/",
+    "source": "DPS"
   },
   {
     "lat": 34.0204134,
     "lon": -118.2809696,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2026-01-31T19:19:00",
     "location": "Figueroa Street and McCarthy Way, west sidewalk",
-    "url": "https://dps.usc.edu/2026/02/02/robbery-163/"
+    "url": "https://dps.usc.edu/2026/02/02/robbery-163/",
+    "source": "DPS"
   },
   {
     "lat": 34.0188836,
     "lon": -118.2886992,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2026-01-28T08:50:00",
     "location": "On the University Park Campus at Watt Way and West 37th Place",
-    "url": "https://dps.usc.edu/2026/01/28/robbery-162/"
+    "url": "https://dps.usc.edu/2026/01/28/robbery-162/",
+    "source": "DPS"
   },
   {
     "lat": 34.0219044,
     "lon": -118.2800026,
     "method": "intersection",
     "offense": "Aggravated Assault",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2026-01-27T14:30:00",
     "location": "Jefferson Bl. and Figueroa St., northwest corner",
-    "url": "https://dps.usc.edu/2026/01/27/aggravated-assault-29/"
+    "url": "https://dps.usc.edu/2026/01/27/aggravated-assault-29/",
+    "source": "DPS"
   },
   {
     "lat": 34.0219044,
     "lon": -118.2800026,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2026-01-24T18:01:00",
     "location": "Jefferson Bl. west of Figueroa St., north sidewalk",
-    "url": "https://dps.usc.edu/2026/01/26/robbery-161/"
+    "url": "https://dps.usc.edu/2026/01/26/robbery-161/",
+    "source": "DPS"
   },
   {
     "lat": 34.02297085,
     "lon": -118.28234885,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2026-01-17T18:08:00",
     "location": "Jefferson Boulevard and Royal Street, north sidewalk.",
-    "url": "https://dps.usc.edu/2026/01/20/robbery-160/"
+    "url": "https://dps.usc.edu/2026/01/20/robbery-160/",
+    "source": "DPS"
   },
   {
     "lat": 34.0204134,
     "lon": -118.2809696,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2026-01-13T20:18:00",
     "location": "Figueroa Street and McCarthy Way, west sidewalk.",
-    "url": "https://dps.usc.edu/2026/01/14/robbery-159/"
+    "url": "https://dps.usc.edu/2026/01/14/robbery-159/",
+    "source": "DPS"
   },
   {
     "lat": 34.0219044,
     "lon": -118.2800026,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2025-12-21T18:30:00",
     "location": "Figueroa Street, north of Jefferson Boulevard, east sidewalk.",
-    "url": "https://dps.usc.edu/2025/12/23/robbery-158/"
+    "url": "https://dps.usc.edu/2025/12/23/robbery-158/",
+    "source": "DPS"
   },
   {
     "lat": 34.01823095,
     "lon": -118.2890321,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2025-12-15T14:56:00",
     "location": "Exposition Boulevard at Watt Way, south sidewalk",
-    "url": "https://dps.usc.edu/2025/12/16/robbery-157/"
+    "url": "https://dps.usc.edu/2025/12/16/robbery-157/",
+    "source": "DPS"
   },
   {
     "lat": 34.031503247153,
     "lon": -118.287358787963,
     "method": "block",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2025-12-15T03:53:00",
     "location": "2600 block of Orchard Ave.",
-    "url": "https://dps.usc.edu/2025/12/16/burglary-45/"
+    "url": "https://dps.usc.edu/2025/12/16/burglary-45/",
+    "source": "DPS"
   },
   {
     "lat": 34.019310160321,
     "lon": -118.281560569339,
     "method": "block",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2025-11-23T16:08:00",
     "location": "In front of Wing Stop located on the 3500 block of Figueroa Street",
-    "url": "https://dps.usc.edu/2025/11/23/robbery-155/"
+    "url": "https://dps.usc.edu/2025/11/23/robbery-155/",
+    "source": "DPS"
   },
   {
     "lat": 34.017014426092,
     "lon": -118.282691686198,
     "method": "block",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2025-11-22T16:33:00",
     "location": "On the sidewalk of the 3700 block of Figueroa Street",
-    "url": "https://dps.usc.edu/2025/11/23/robbery-154/"
+    "url": "https://dps.usc.edu/2025/11/23/robbery-154/",
+    "source": "DPS"
   },
   {
     "lat": 34.026320999999996,
     "lon": -118.27719730000001,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2025-11-16T15:02:00",
     "location": "On the sidewalk of Figueroa Street between 28th Street and 30th Street",
-    "url": "https://dps.usc.edu/2025/11/16/robbery-152/"
+    "url": "https://dps.usc.edu/2025/11/16/robbery-152/",
+    "source": "DPS"
   },
   {
     "lat": 34.026458943026,
     "lon": -118.278325360427,
     "method": "block",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2025-11-04T21:07:00",
     "location": "On the sidewalk of the 600 block of 28th Street",
-    "url": "https://dps.usc.edu/2025/11/04/robbery-150/"
+    "url": "https://dps.usc.edu/2025/11/04/robbery-150/",
+    "source": "DPS"
   },
   {
     "lat": 34.0266861,
     "lon": -118.2817844,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2025-11-04T19:26:00",
     "location": "At the intersection of 30th Street & University Avenue",
-    "url": "https://dps.usc.edu/2025/11/04/robbery-149/"
+    "url": "https://dps.usc.edu/2025/11/04/robbery-149/",
+    "source": "DPS"
   },
   {
     "lat": 34.022022519627,
     "lon": -118.293052776276,
     "method": "block",
     "offense": "Attempted Motor Vehicle Theft",
-    "severity": 1.7,
+    "severity": 3.4,
     "occurred_at": "2025-11-01T22:40:00",
     "location": "1100 block of 36th Place, Los Angeles, 90007",
-    "url": "https://dps.usc.edu/2025/11/02/attempted-motor-vehicle-theft/"
+    "url": "https://dps.usc.edu/2025/11/02/attempted-motor-vehicle-theft/",
+    "source": "DPS"
   },
   {
     "lat": 34.02770824923,
     "lon": -118.293109082685,
     "method": "block",
     "offense": "Battery",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2025-10-29T20:05:00",
     "location": "On the 1300 block of 30th Street, Los Angeles, 90007",
-    "url": "https://dps.usc.edu/2025/10/29/battery-5/"
+    "url": "https://dps.usc.edu/2025/10/29/battery-5/",
+    "source": "DPS"
   },
   {
     "lat": 34.0274328,
     "lon": -118.2882375,
     "method": "intersection",
     "offense": "Aggravated Assault",
-    "severity": 3.5,
+    "severity": 7.0,
     "occurred_at": "2025-10-17T17:30:00",
     "location": "On the sidewalk at the intersection of 30th Street & Orchard Avenue",
-    "url": "https://dps.usc.edu/2025/10/17/aggravated-assault-28/"
+    "url": "https://dps.usc.edu/2025/10/17/aggravated-assault-28/",
+    "source": "DPS"
   },
   {
     "lat": 34.0283954,
     "lon": -118.28784075,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2025-09-11T16:13:00",
     "location": "At the intersection of 29th Street and Orchard Avenue",
-    "url": "https://dps.usc.edu/2025/09/11/robbery-147/"
+    "url": "https://dps.usc.edu/2025/09/11/robbery-147/",
+    "source": "DPS"
   },
   {
     "lat": 34.024470855177,
     "lon": -118.2959582912,
     "method": "block",
     "offense": "Burglary & Robbery",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2025-09-04T22:00:00",
     "location": "1200 block of 35th Street, Los Angeles, CA 90007",
-    "url": "https://dps.usc.edu/2025/09/05/burglary-robbery/"
+    "url": "https://dps.usc.edu/2025/09/05/burglary-robbery/",
+    "source": "DPS"
   },
   {
     "lat": 34.022826831782,
     "lon": -118.295980260188,
     "method": "block",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2025-08-28T05:04:00",
     "location": "1200 block of 36th Street, Los Angeles, CA 90007",
-    "url": "https://dps.usc.edu/2025/08/28/burglary-44/"
+    "url": "https://dps.usc.edu/2025/08/28/burglary-44/",
+    "source": "DPS"
   },
   {
     "lat": 34.019310160321,
     "lon": -118.281560569339,
     "method": "block",
     "offense": "Aggravated Assault",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2025-07-31T19:53:00",
     "location": "In front of the Wingstop restaurant on the 3500 block of Figueroa Street",
-    "url": "https://dps.usc.edu/2025/07/31/aggravated-assault-26/"
+    "url": "https://dps.usc.edu/2025/07/31/aggravated-assault-26/",
+    "source": "DPS"
   },
   {
     "lat": 34.0213554,
     "lon": -118.2787529,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2025-07-30T13:15:00",
     "location": "Jefferson Boulevard, east of Flower Street (Jefferson Boulevard underpass for the 110 Freeway)",
-    "url": "https://dps.usc.edu/2025/07/30/robbery-146/"
+    "url": "https://dps.usc.edu/2025/07/30/robbery-146/",
+    "source": "DPS"
   },
   {
     "lat": 34.01825115,
     "lon": -118.2915529,
     "method": "intersection",
     "offense": "Grand Theft Person",
-    "severity": 1.2,
+    "severity": 2.4,
     "occurred_at": "2025-07-23T23:22:00",
     "location": "Metrolink platform located at Exposition Boulevard & Vermont Avenue",
-    "url": "https://dps.usc.edu/2025/07/24/grand-theft-person-5/"
+    "url": "https://dps.usc.edu/2025/07/24/grand-theft-person-5/",
+    "source": "DPS"
   },
   {
     "lat": 34.027368570687,
     "lon": -118.288027706791,
     "method": "block",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2025-07-14T03:26:00",
     "location": "1100 block of 30th Street, Los Angeles, CA 90007",
-    "url": "https://dps.usc.edu/2025/07/14/burglary-43/"
+    "url": "https://dps.usc.edu/2025/07/14/burglary-43/",
+    "source": "DPS"
   },
   {
     "lat": 34.0276748,
     "lon": -118.2749528,
     "method": "intersection",
     "offense": "Aggravated Assault",
-    "severity": 3.5,
+    "severity": 7.0,
     "occurred_at": "2025-07-08T20:05:00",
     "location": "Metrolink platform located at Adams Boulevard & Flower Street",
-    "url": "https://dps.usc.edu/2025/07/08/aggravated-assault-25/"
+    "url": "https://dps.usc.edu/2025/07/08/aggravated-assault-25/",
+    "source": "DPS"
   },
   {
     "lat": 34.027367367483,
     "lon": -118.286525361623,
     "method": "block",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2025-07-04T05:44:00",
     "location": "1000 block of 30th Street, Los Angeles, CA 90007",
-    "url": "https://dps.usc.edu/2025/07/04/burglary-42/"
+    "url": "https://dps.usc.edu/2025/07/04/burglary-42/",
+    "source": "DPS"
   },
   {
     "lat": 34.029744942415,
     "lon": -118.28116466117,
     "method": "block",
     "offense": "Attempt Robbery",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2025-06-23",
     "location": "On the 2600 block of Severance Street",
-    "url": "https://dps.usc.edu/2025/06/23/attempt-robbery-11/"
+    "url": "https://dps.usc.edu/2025/06/23/attempt-robbery-11/",
+    "source": "DPS"
   },
   {
     "lat": 34.02291035802,
     "lon": -118.277660516186,
     "method": "address",
     "offense": "Robbery",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2025-06-20T23:00:00",
     "location": "Metrolink platform located at 3214 Flower Street",
-    "url": "https://dps.usc.edu/2025/06/22/robbery-144/"
+    "url": "https://dps.usc.edu/2025/06/22/robbery-144/",
+    "source": "DPS"
   },
   {
     "lat": 34.03277,
     "lon": -118.2889003,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2025-05-09T16:15:00",
     "location": "At the intersection of Ellendale Place and Adams Boulevard",
-    "url": "https://dps.usc.edu/2025/05/09/robbery-142/"
+    "url": "https://dps.usc.edu/2025/05/09/robbery-142/",
+    "source": "DPS"
   },
   {
     "lat": 34.0327532,
     "lon": -118.2864695,
     "method": "intersection",
     "offense": "Attempted Robbery & Attempted Motor Vehicle Theft",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2025-04-04T13:15:00",
     "location": "At the intersection of Adams Boulevard and Magnolia Street",
-    "url": "https://dps.usc.edu/2025/04/04/attempted-robbery-attempted-motor-vehicle-theft/"
+    "url": "https://dps.usc.edu/2025/04/04/attempted-robbery-attempted-motor-vehicle-theft/",
+    "source": "DPS"
   },
   {
     "lat": 34.02915,
     "lon": -118.28396484999999,
     "method": "intersection",
     "offense": "Robbery & Motor Vehicle Theft",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2025-04-03T15:34:00",
     "location": "On the sidewalk near the intersection of 28th Street & Hoover Street",
-    "url": "https://dps.usc.edu/2025/04/03/robbery-motor-vehicle-theft/"
+    "url": "https://dps.usc.edu/2025/04/03/robbery-motor-vehicle-theft/",
+    "source": "DPS"
   },
   {
     "lat": 34.01896774658,
     "lon": -118.293211807691,
     "method": "block",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2025-03-28T21:45:00",
     "location": "1100 Block of 37th Drive",
-    "url": "https://dps.usc.edu/2025/03/30/robbery-140/"
+    "url": "https://dps.usc.edu/2025/03/30/robbery-140/",
+    "source": "DPS"
   },
   {
     "lat": 34.02915,
     "lon": -118.28396484999999,
     "method": "intersection",
     "offense": "Sexual Battery/Fondling",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2025-02-27T16:56:00",
     "location": "At the intersection of 28th Street & Hoover Street",
-    "url": "https://dps.usc.edu/2025/02/27/sexual-battery-fondling-32/"
+    "url": "https://dps.usc.edu/2025/02/27/sexual-battery-fondling-32/",
+    "source": "DPS"
   },
   {
     "lat": 34.02737064418,
     "lon": -118.290361914995,
     "method": "block",
     "offense": "Burglary & Motor Vehicle Theft",
-    "severity": 1.2,
+    "severity": 2.4,
     "occurred_at": "2025-02-19T05:30:00",
     "location": "Off UPC campus in the 1200 block of 30th Street",
-    "url": "https://dps.usc.edu/2025/02/19/burglary-motor-vehicle-theft/"
+    "url": "https://dps.usc.edu/2025/02/19/burglary-motor-vehicle-theft/",
+    "source": "DPS"
   },
   {
     "lat": 34.0327532,
     "lon": -118.2864695,
     "method": "intersection",
     "offense": "Attempt Robbery",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2025-02-17T15:38:00",
     "location": "On the northeast corner of Adams Boulevard & Magnolia Avenue",
-    "url": "https://dps.usc.edu/2025/02/17/attempt-robbery-10/"
+    "url": "https://dps.usc.edu/2025/02/17/attempt-robbery-10/",
+    "source": "DPS"
   },
   {
     "lat": 34.0241479,
     "lon": -118.2785786,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2025-02-09T19:43:00",
     "location": "At the corner of 31st Street and Figueroa Street",
-    "url": "https://dps.usc.edu/2025/02/09/robbery-138/"
+    "url": "https://dps.usc.edu/2025/02/09/robbery-138/",
+    "source": "DPS"
   },
   {
     "lat": 34.023806245176,
     "lon": -118.295833316602,
     "method": "block",
     "offense": "Attempt Burglary",
-    "severity": 1.1,
+    "severity": 2.2,
     "occurred_at": "2025-01-29T05:43:00",
     "location": "3500 block of Budlong Avenue",
-    "url": "https://dps.usc.edu/2025/01/29/attempt-burglary/"
+    "url": "https://dps.usc.edu/2025/01/29/attempt-burglary/",
+    "source": "DPS"
   },
   {
     "lat": 34.023628168877,
     "lon": -118.29893146119,
     "method": "block",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2025-01-28T04:12:00",
     "location": "1300 block, W. 35th Place",
-    "url": "https://dps.usc.edu/2025/01/28/burglary-38/"
+    "url": "https://dps.usc.edu/2025/01/28/burglary-38/",
+    "source": "DPS"
   },
   {
     "lat": 34.0193072,
     "lon": -118.2784968,
     "method": "intersection",
     "offense": "Attempt Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2025-01-24T23:59:00",
     "location": "At the corner of 35th Street & Hope Street",
-    "url": "https://dps.usc.edu/2025/01/25/attempt-robbery-9/"
+    "url": "https://dps.usc.edu/2025/01/25/attempt-robbery-9/",
+    "source": "DPS"
   },
   {
     "lat": 34.028761240177,
     "lon": -118.273801381475,
     "method": "block",
     "offense": "Attempt Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2025-01-24T13:01:00",
     "location": "On the Metro platform at the 2400 block of Flower Street",
-    "url": "https://dps.usc.edu/2025/01/24/attempt-robbery-8/"
+    "url": "https://dps.usc.edu/2025/01/24/attempt-robbery-8/",
+    "source": "DPS"
   },
   {
     "lat": 34.0343902,
     "lon": -118.2890095,
     "method": "intersection",
     "offense": "Sexual Battery/Fondling",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2025-01-17T07:40:00",
     "location": "At the corner of 24th Street & Ellendale Place; 29th Street & Orchard Avenue; and 30th Street & Orchard Avenue",
-    "url": "https://dps.usc.edu/2025/01/17/sexual-battery-fondling-30/"
+    "url": "https://dps.usc.edu/2025/01/17/sexual-battery-fondling-30/",
+    "source": "DPS"
   },
   {
     "lat": 34.017014426092,
     "lon": -118.282691686198,
     "method": "block",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2025-01-13T20:24:00",
     "location": "On the sidewalk of the 3700 block of Figueroa Street",
-    "url": "https://dps.usc.edu/2025/01/13/robbery-136/"
+    "url": "https://dps.usc.edu/2025/01/13/robbery-136/",
+    "source": "DPS"
   },
   {
     "lat": 34.034237412761,
     "lon": -118.291472636495,
     "method": "address",
     "offense": "Aggravated Assault & Robbery",
-    "severity": 3.5,
+    "severity": 7.0,
     "occurred_at": "2024-11-30T20:27:00",
     "location": "In the parking lot behind La Barca’s, located at 2414 Vermont Avenue",
-    "url": "https://dps.usc.edu/2024/11/30/aggravated-assault-robbery/"
+    "url": "https://dps.usc.edu/2024/11/30/aggravated-assault-robbery/",
+    "source": "DPS"
   },
   {
     "lat": 34.029523272118,
     "lon": -118.292672871714,
     "method": "block",
     "offense": "Attempt Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2024-11-21T19:40:00",
     "location": "1400 block of 28th Street",
-    "url": "https://dps.usc.edu/2024/11/21/attempt-robbery-7/"
+    "url": "https://dps.usc.edu/2024/11/21/attempt-robbery-7/",
+    "source": "DPS"
   },
   {
     "lat": 34.031992533558,
     "lon": -118.288750900674,
     "method": "block",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2024-11-06T13:40:00",
     "location": "2600 block of Ellendale Place",
-    "url": "https://dps.usc.edu/2024/11/06/robbery-135/"
+    "url": "https://dps.usc.edu/2024/11/06/robbery-135/",
+    "source": "DPS"
   },
   {
     "lat": 34.028563493577,
     "lon": -118.283076992445,
     "method": "block",
     "offense": "Attempted Robbery",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2024-11-01T02:39:00",
     "location": "On the sidewalk at the 900 block of West 28th Street",
-    "url": "https://dps.usc.edu/2024/11/01/attempted-robbery-12/"
+    "url": "https://dps.usc.edu/2024/11/01/attempted-robbery-12/",
+    "source": "DPS"
   },
   {
     "lat": 34.020908609363,
     "lon": -118.29897714404,
     "method": "block",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2024-10-15T17:40:00",
     "location": "On the sidewalk at the 1300 block of 37th Street",
-    "url": "https://dps.usc.edu/2024/10/15/robbery-133/"
+    "url": "https://dps.usc.edu/2024/10/15/robbery-133/",
+    "source": "DPS"
   },
   {
     "lat": 34.024175650000004,
     "lon": -118.28532185,
     "method": "intersection",
     "offense": "Battery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2024-10-13T17:27:00",
     "location": "Jefferson Boulevard at Watt Way-north sidewalk",
-    "url": "https://dps.usc.edu/2024/10/14/battery-4/"
+    "url": "https://dps.usc.edu/2024/10/14/battery-4/",
+    "source": "DPS"
   },
   {
     "lat": 34.022313311755,
     "lon": -118.279803065745,
     "method": "address",
     "offense": "Robbery",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2024-10-04T19:00:00",
     "location": "3335 Figueroa Street",
-    "url": "https://dps.usc.edu/2024/10/05/robbery-132/"
+    "url": "https://dps.usc.edu/2024/10/05/robbery-132/",
+    "source": "DPS"
   },
   {
     "lat": 34.019906278987,
     "lon": -118.296097336448,
     "method": "block",
     "offense": "Sexual Battery/Fondling",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2024-09-03T22:25:00",
     "location": "1200 block of West 37th Place",
-    "url": "https://dps.usc.edu/2024/09/04/sexual-battery-fondling-29/"
+    "url": "https://dps.usc.edu/2024/09/04/sexual-battery-fondling-29/",
+    "source": "DPS"
   },
   {
     "lat": 34.0317181,
     "lon": -118.2839972,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2024-08-22T15:10:00",
     "location": "Adams Boulevard and Hoover Street, southwest corner",
-    "url": "https://dps.usc.edu/2024/08/22/robbery-131/"
+    "url": "https://dps.usc.edu/2024/08/22/robbery-131/",
+    "source": "DPS"
   },
   {
     "lat": 34.022424652398,
     "lon": -118.279575798761,
     "method": "block",
     "offense": "Battery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2024-08-19T10:27:00",
     "location": "3300 block of Figueroa Street",
-    "url": "https://dps.usc.edu/2024/08/19/battery-3/"
+    "url": "https://dps.usc.edu/2024/08/19/battery-3/",
+    "source": "DPS"
   },
   {
     "lat": 34.02297085,
     "lon": -118.28234885,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2024-08-05T15:57:00",
     "location": "Jefferson Blvd. at Royal Street",
-    "url": "https://dps.usc.edu/2024/08/05/robbery-130/"
+    "url": "https://dps.usc.edu/2024/08/05/robbery-130/",
+    "source": "DPS"
   },
   {
     "lat": 34.0304902,
     "lon": -118.291558,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2024-08-02T00:55:00",
     "location": "Vermont Avenue and 27th Street",
-    "url": "https://dps.usc.edu/2024/08/02/robbery-129/"
+    "url": "https://dps.usc.edu/2024/08/02/robbery-129/",
+    "source": "DPS"
   },
   {
     "lat": 34.028563493577,
     "lon": -118.283076992445,
     "method": "block",
     "offense": "Lewd Conduct",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2024-07-20T15:31:00",
     "location": "900 block, West 28th Street",
-    "url": "https://dps.usc.edu/2024/07/22/lewd-conduct-6/"
+    "url": "https://dps.usc.edu/2024/07/22/lewd-conduct-6/",
+    "source": "DPS"
   },
   {
     "lat": 34.01825115,
     "lon": -118.2915529,
     "method": "intersection",
     "offense": "Aggravated Assault",
-    "severity": 3.5,
+    "severity": 7.0,
     "occurred_at": "2024-06-24T14:20:00",
     "location": "Exposition Boulevard and Vermont Avenue-Metro platform",
-    "url": "https://dps.usc.edu/2024/06/25/aggravated-assault-22/"
+    "url": "https://dps.usc.edu/2024/06/25/aggravated-assault-22/",
+    "source": "DPS"
   },
   {
     "lat": 34.027262012756,
     "lon": -118.280143020029,
     "method": "block",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2024-06-23T03:14:00",
     "location": "700 block of 28th Street, Los Angeles, CA 90007",
-    "url": "https://dps.usc.edu/2024/06/23/burglary-35/"
+    "url": "https://dps.usc.edu/2024/06/23/burglary-35/",
+    "source": "DPS"
   },
   {
     "lat": 34.026458943026,
     "lon": -118.278325360427,
     "method": "block",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2024-05-23T21:10:00",
     "location": "600 Block of 28th Street, Los Angeles, CA 90007",
-    "url": "https://dps.usc.edu/2024/05/24/burglary-33/"
+    "url": "https://dps.usc.edu/2024/05/24/burglary-33/",
+    "source": "DPS"
   },
   {
     "lat": 34.018981433896,
     "lon": -118.298971696849,
     "method": "block",
     "offense": "Burglary",
-    "severity": 1.1,
+    "severity": 2.2,
     "occurred_at": "2024-05-13T12:27:00",
     "location": "1300 block of West 37th Drive",
-    "url": "https://dps.usc.edu/2024/05/16/burglary-32/"
+    "url": "https://dps.usc.edu/2024/05/16/burglary-32/",
+    "source": "DPS"
   },
   {
     "lat": 34.0293616,
     "lon": -118.2874377,
     "method": "intersection",
     "offense": "Sexual Battery/Fondling",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2024-05-05T18:51:00",
     "location": "In an alleyway near 28th Street & Orchard Street",
-    "url": "https://dps.usc.edu/2024/05/06/sexual-battery-fondling-28/"
+    "url": "https://dps.usc.edu/2024/05/06/sexual-battery-fondling-28/",
+    "source": "DPS"
   },
   {
     "lat": 34.023628168877,
     "lon": -118.29893146119,
     "method": "block",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2024-04-21T22:55:00",
     "location": "1300 block of 1/2 West 35th Place, Los Angeles, CA 90007",
-    "url": "https://dps.usc.edu/2024/04/22/robbery-127/"
+    "url": "https://dps.usc.edu/2024/04/22/robbery-127/",
+    "source": "DPS"
   },
   {
     "lat": 34.0276006,
     "lon": -118.29156,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2024-04-19T23:20:00",
     "location": "Northeast corner of Vermont Avenue and 30th Street",
-    "url": "https://dps.usc.edu/2024/04/22/robbery-126/"
+    "url": "https://dps.usc.edu/2024/04/22/robbery-126/",
+    "source": "DPS"
   },
   {
     "lat": 34.032372618496,
     "lon": -118.2802234085,
     "method": "block",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2024-04-09T16:35:00",
     "location": "2300 block of Scarff Street",
-    "url": "https://dps.usc.edu/2024/04/09/robbery-123/"
+    "url": "https://dps.usc.edu/2024/04/09/robbery-123/",
+    "source": "DPS"
   },
   {
     "lat": 34.032446177274,
     "lon": -118.281802652152,
     "method": "block",
     "offense": "Robbery and Attempted Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2024-04-01T00:15:00",
     "location": "2300 block of Portland Street and 700 block of 28th Street",
-    "url": "https://dps.usc.edu/2024/04/01/robbery-and-attempted-robbery/"
+    "url": "https://dps.usc.edu/2024/04/01/robbery-and-attempted-robbery/",
+    "source": "DPS"
   },
   {
     "lat": 34.024557582979,
     "lon": -118.278216067221,
     "method": "block",
     "offense": "Sexual Battery/Fondling",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2024-03-15T14:51:00",
     "location": "3000 block of Figueroa Street",
-    "url": "https://dps.usc.edu/2024/03/15/sexual-battery-fondling-27/"
+    "url": "https://dps.usc.edu/2024/03/15/sexual-battery-fondling-27/",
+    "source": "DPS"
   },
   {
     "lat": 34.022022519627,
     "lon": -118.293052776276,
     "method": "block",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2024-02-08T06:28:00",
     "location": "Off campus in the 1100 block of 36th Place",
-    "url": "https://dps.usc.edu/2024/02/08/burglary-29/"
+    "url": "https://dps.usc.edu/2024/02/08/burglary-29/",
+    "source": "DPS"
   },
   {
     "lat": 34.030804111148,
     "lon": -118.290248830437,
     "method": "address",
     "offense": "Robbery",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2024-01-26T20:48:00",
     "location": "2658 Menlo Avenue",
-    "url": "https://dps.usc.edu/2024/02/08/robbery-121/"
+    "url": "https://dps.usc.edu/2024/02/08/robbery-121/",
+    "source": "DPS"
   },
   {
     "lat": 34.018709079384,
     "lon": -118.281943703523,
     "method": "address",
     "offense": "Attempted Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2024-01-14T19:51:00",
     "location": "Wing Stop located at 3584 Figueroa Street",
-    "url": "https://dps.usc.edu/2024/01/17/attempted-robbery-10/"
+    "url": "https://dps.usc.edu/2024/01/17/attempted-robbery-10/",
+    "source": "DPS"
   },
   {
     "lat": 34.019898100994,
     "lon": -118.29252025692,
     "method": "block",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2024-01-14T09:10:00",
     "location": "1100 block of 1/2 West 37th Place",
-    "url": "https://dps.usc.edu/2024/01/17/burglary-27/"
+    "url": "https://dps.usc.edu/2024/01/17/burglary-27/",
+    "source": "DPS"
   },
   {
     "lat": 34.02915,
     "lon": -118.28396484999999,
     "method": "intersection",
     "offense": "Aggravated Assault and Attempted Robbery",
-    "severity": 3.5,
+    "severity": 7.0,
     "occurred_at": "2024-01-13T20:00:00",
     "location": "At the corner of West 28th Street and South Hoover Street",
-    "url": "https://dps.usc.edu/2024/01/17/aggravated-assault-attempted-robery/"
+    "url": "https://dps.usc.edu/2024/01/17/aggravated-assault-attempted-robery/",
+    "source": "DPS"
   },
   {
     "lat": 34.026814661839,
     "lon": -118.292650241725,
     "method": "block",
     "offense": "Robbery",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2024-01-11T15:54:00",
     "location": "On the 1300 block of West 30th Place",
-    "url": "https://dps.usc.edu/2024/01/17/robbery-120/"
+    "url": "https://dps.usc.edu/2024/01/17/robbery-120/",
+    "source": "DPS"
   },
   {
     "lat": 34.022313311755,
     "lon": -118.279803065745,
     "method": "address",
     "offense": "Other",
-    "severity": 1.0,
+    "severity": 2.0,
     "occurred_at": "2023-12-10T15:55:00",
     "location": "In front of CVS located at 3335 Figueroa Street",
-    "url": "https://dps.usc.edu/2023/12/11/other-battery/"
+    "url": "https://dps.usc.edu/2023/12/11/other-battery/",
+    "source": "DPS"
   },
   {
     "lat": 34.022313311755,
     "lon": -118.279803065745,
     "method": "address",
     "offense": "Robbery",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2023-12-02T10:00:00",
     "location": "CVS Pharmacy located at 3335 Figueroa Street",
-    "url": "https://dps.usc.edu/2023/12/11/robbery-119/"
+    "url": "https://dps.usc.edu/2023/12/11/robbery-119/",
+    "source": "DPS"
   },
   {
     "lat": 34.028727172269,
     "lon": -118.273823048357,
     "method": "address",
     "offense": "Robbery",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2023-11-27T08:04:00",
     "location": "Metro Station located at 2460 Flower Street",
-    "url": "https://dps.usc.edu/2023/11/27/robbery-118/"
+    "url": "https://dps.usc.edu/2023/11/27/robbery-118/",
+    "source": "DPS"
   },
   {
     "lat": 34.03270568918,
     "lon": -118.291469821914,
     "method": "address",
     "offense": "Sexual Battery/Fondling",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2023-11-27T08:07:00",
     "location": "In front of Ralphs Supermarket located at 2600 Vermont Avenue",
-    "url": "https://dps.usc.edu/2023/11/27/sexual-battery-fondling-25/"
+    "url": "https://dps.usc.edu/2023/11/27/sexual-battery-fondling-25/",
+    "source": "DPS"
   },
   {
     "lat": 34.017268907092,
     "lon": -118.277908598989,
     "method": "block",
     "offense": "Rape",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2023-11-01T03:00:00",
     "location": "3600 block of South Grand Avenue",
-    "url": "https://dps.usc.edu/2023/11/01/rape-5/"
+    "url": "https://dps.usc.edu/2023/11/01/rape-5/",
+    "source": "DPS"
   },
   {
     "lat": 34.028202568233,
     "lon": -118.296910891535,
     "method": "block",
     "offense": "Aggravated Assault",
-    "severity": 3.5,
+    "severity": 7.0,
     "occurred_at": "2023-10-29T14:50:00",
     "location": "2900 block of Van Buren Place",
-    "url": "https://dps.usc.edu/2023/10/30/aggravated-assault-18/"
+    "url": "https://dps.usc.edu/2023/10/30/aggravated-assault-18/",
+    "source": "DPS"
   },
   {
     "lat": 34.033582,
     "lon": -118.2889923,
     "method": "intersection",
     "offense": "Aggravated Assault",
-    "severity": 3.5,
+    "severity": 7.0,
     "occurred_at": "2023-10-14T11:25:00",
     "location": "West 25th Street and Ellendale Place, southwest corner",
-    "url": "https://dps.usc.edu/2023/10/14/aggravated-assault-17/"
+    "url": "https://dps.usc.edu/2023/10/14/aggravated-assault-17/",
+    "source": "DPS"
   },
   {
     "lat": 34.019898100994,
     "lon": -118.29252025692,
     "method": "block",
     "offense": "Burglary",
-    "severity": 1.1,
+    "severity": 2.2,
     "occurred_at": "2023-10-13T05:21:00",
     "location": "1100 block west 37th Place",
-    "url": "https://dps.usc.edu/2023/10/13/burglary-25/"
+    "url": "https://dps.usc.edu/2023/10/13/burglary-25/",
+    "source": "DPS"
   },
   {
     "lat": 34.0220568,
     "lon": -118.2915579,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2023-10-11T17:53:00",
     "location": "On Vermont Avenue near 36th Place",
-    "url": "https://dps.usc.edu/2023/10/11/robbery-117/"
+    "url": "https://dps.usc.edu/2023/10/11/robbery-117/",
+    "source": "DPS"
   },
   {
     "lat": 34.027262012756,
     "lon": -118.280143020029,
     "method": "block",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2023-10-07T04:50:00",
     "location": "On the 700 block of 28th Street",
-    "url": "https://dps.usc.edu/2023/10/07/burglary-24/"
+    "url": "https://dps.usc.edu/2023/10/07/burglary-24/",
+    "source": "DPS"
   },
   {
     "lat": 34.0257884,
     "lon": -118.2796882,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2023-09-16T16:44:00",
     "location": "30th Street & Shrine Place",
-    "url": "https://dps.usc.edu/2023/09/16/robbery-114/"
+    "url": "https://dps.usc.edu/2023/09/16/robbery-114/",
+    "source": "DPS"
   },
   {
     "lat": 34.032634933817,
     "lon": -118.282839393288,
     "method": "address",
     "offense": "Aggravated Assault",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2023-09-12T18:40:00",
     "location": "Hoover Recreation Center located at 1010 25th Street",
-    "url": "https://dps.usc.edu/2023/09/12/aggravated-assault-15/"
+    "url": "https://dps.usc.edu/2023/09/12/aggravated-assault-15/",
+    "source": "DPS"
   },
   {
     "lat": 34.027100642041,
     "lon": -118.276142431547,
     "method": "address",
     "offense": "Sexual Battery/Fondling",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2023-09-11T18:02:00",
     "location": "In front of Five Guys Restaurant located at 530 27th Street",
-    "url": "https://dps.usc.edu/2023/09/12/sexual-battery-fondling-23/"
+    "url": "https://dps.usc.edu/2023/09/12/sexual-battery-fondling-23/",
+    "source": "DPS"
   },
   {
     "lat": 34.022713616458,
     "lon": -118.291606162566,
     "method": "address",
     "offense": "Attempted Robbery",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2023-08-31T11:39:00",
     "location": "Citibank branch, located at 3615 Vermont Avenue",
-    "url": "https://dps.usc.edu/2023/08/31/attempted-robbery-8/"
+    "url": "https://dps.usc.edu/2023/08/31/attempted-robbery-8/",
+    "source": "DPS"
   },
   {
     "lat": 34.022826831782,
     "lon": -118.295980260188,
     "method": "block",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2023-08-24T06:40:00",
     "location": "1200 block of West 36th Street",
-    "url": "https://dps.usc.edu/2023/08/24/burglary-22/"
+    "url": "https://dps.usc.edu/2023/08/24/burglary-22/",
+    "source": "DPS"
   },
   {
     "lat": 34.020902750329,
     "lon": -118.293300016345,
     "method": "block",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2023-08-15T21:30:00",
     "location": "1100 block of West 37th Street",
-    "url": "https://dps.usc.edu/2023/08/16/burglary-21/"
+    "url": "https://dps.usc.edu/2023/08/16/burglary-21/",
+    "source": "DPS"
   },
   {
     "lat": 34.024333646395,
     "lon": -118.278515077902,
     "method": "address",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2023-08-16T04:50:00",
     "location": "South side exterior of The Mansion located at 3025 Figueroa Street",
-    "url": "https://dps.usc.edu/2023/08/16/robbery-113/"
+    "url": "https://dps.usc.edu/2023/08/16/robbery-113/",
+    "source": "DPS"
   },
   {
     "lat": 34.029891764475,
     "lon": -118.290248832587,
     "method": "block",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2023-07-25T14:10:00",
     "location": "2700 block of Menlo Avenue",
-    "url": "https://dps.usc.edu/2023/07/25/burglary-20/"
+    "url": "https://dps.usc.edu/2023/07/25/burglary-20/",
+    "source": "DPS"
   },
   {
     "lat": 34.01825115,
     "lon": -118.2915529,
     "method": "intersection",
     "offense": "Aggravated Assault",
-    "severity": 3.5,
+    "severity": 7.0,
     "occurred_at": "2023-06-06T22:49:00",
     "location": "AMPM store located at corner of Exposition Boulevard and Vermont Avenue",
-    "url": "https://dps.usc.edu/2023/06/07/aggravated-assault-13/"
+    "url": "https://dps.usc.edu/2023/06/07/aggravated-assault-13/",
+    "source": "DPS"
   },
   {
     "lat": 34.027898416148,
     "lon": -118.288148320641,
     "method": "block",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2023-06-01T07:00:00",
     "location": "2900 block of Orchard Avenue",
-    "url": "https://dps.usc.edu/2023/06/01/burglary-19/"
+    "url": "https://dps.usc.edu/2023/06/01/burglary-19/",
+    "source": "DPS"
   },
   {
     "lat": 34.023176574488,
     "lon": -118.300149223965,
     "method": "address",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2023-05-17T03:55:00",
     "location": "In front of 3558 South Normandie Avenue",
-    "url": "https://dps.usc.edu/2023/05/17/robbery-109/"
+    "url": "https://dps.usc.edu/2023/05/17/robbery-109/",
+    "source": "DPS"
   },
   {
     "lat": 34.034769103127,
     "lon": -118.283456370336,
     "method": "address",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2023-05-09T13:44:00",
     "location": "Near Nature’s Brew located at 2316 S. Union Ave., Los Angeles, CA 90007",
-    "url": "https://dps.usc.edu/2023/05/10/robbery-108/"
+    "url": "https://dps.usc.edu/2023/05/10/robbery-108/",
+    "source": "DPS"
   },
   {
     "lat": 34.0310042,
     "lon": -118.28242255,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2023-05-02T22:30:00",
     "location": "Pedestrian crosswalk at Portland Street and West Adams Boulevard",
-    "url": "https://dps.usc.edu/2023/05/03/robbery-107/"
+    "url": "https://dps.usc.edu/2023/05/03/robbery-107/",
+    "source": "DPS"
   },
   {
     "lat": 34.021162849999996,
     "lon": -118.27568,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2023-04-17T16:50:00",
     "location": "33rd Street and Grand Avenue",
-    "url": "https://dps.usc.edu/2023/04/18/robbery-105/"
+    "url": "https://dps.usc.edu/2023/04/18/robbery-105/",
+    "source": "DPS"
   },
   {
     "lat": 34.02704237411,
     "lon": -118.276789428542,
     "method": "address",
     "offense": "Robbery",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2023-02-26T19:00:00",
     "location": "2703 Figueroa Street",
-    "url": "https://dps.usc.edu/2023/02/27/robbery-101/"
+    "url": "https://dps.usc.edu/2023/02/27/robbery-101/",
+    "source": "DPS"
   },
   {
     "lat": 34.0219044,
     "lon": -118.2800026,
     "method": "intersection",
     "offense": "<strong>Aggravated Assault</strong>",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2022-11-27T16:28:00",
     "location": "Jefferson Boulevard east of Figueroa Street-south sidewalk",
-    "url": "https://dps.usc.edu/2022/11/28/aggravated-assault-9/"
+    "url": "https://dps.usc.edu/2022/11/28/aggravated-assault-9/",
+    "source": "DPS"
   },
   {
     "lat": 34.025933654801,
     "lon": -118.277338951849,
     "method": "block",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2022-11-18T23:00:00",
     "location": "2800 block of Figueroa Street",
-    "url": "https://dps.usc.edu/2022/11/19/robbery-98/"
+    "url": "https://dps.usc.edu/2022/11/19/robbery-98/",
+    "source": "DPS"
   },
   {
     "lat": 34.025383152691,
     "lon": -118.277690069803,
     "method": "block",
     "offense": "Robbery",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2022-11-06T19:10:00",
     "location": "2900 block of Figueroa Street",
-    "url": "https://dps.usc.edu/2022/11/07/robbery-97/"
+    "url": "https://dps.usc.edu/2022/11/07/robbery-97/",
+    "source": "DPS"
   },
   {
     "lat": 34.0283967,
     "lon": -118.2888526,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2022-10-13T20:30:00",
     "location": "East sidewalk of Ellendale Place, north of 29th Street.",
-    "url": "https://dps.usc.edu/2022/10/14/robbery-95/"
+    "url": "https://dps.usc.edu/2022/10/14/robbery-95/",
+    "source": "DPS"
   },
   {
     "lat": 34.0203968,
     "lon": -118.2863461,
     "method": "place",
     "offense": "Battery",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2022-10-06T13:40:00",
     "location": "Ronald Tutor Campus Center",
-    "url": "https://dps.usc.edu/2022/10/06/battery-2/"
+    "url": "https://dps.usc.edu/2022/10/06/battery-2/",
+    "source": "DPS"
   },
   {
     "lat": 34.027367367483,
     "lon": -118.286525361623,
     "method": "block",
     "offense": "Other",
-    "severity": 1.0,
+    "severity": 2.0,
     "occurred_at": "2022-09-24T02:50:00",
     "location": "1000 block West 30th Street 1000 block West 30th Street",
-    "url": "https://dps.usc.edu/2022/10/06/other/"
+    "url": "https://dps.usc.edu/2022/10/06/other/",
+    "source": "DPS"
   },
   {
     "lat": 34.02770824923,
     "lon": -118.293109082685,
     "method": "block",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2022-09-29T02:00:00",
     "location": "1300 block West 30th Street",
-    "url": "https://dps.usc.edu/2022/09/29/burglary-16/"
+    "url": "https://dps.usc.edu/2022/09/29/burglary-16/",
+    "source": "DPS"
   },
   {
     "lat": 34.0241479,
     "lon": -118.2785786,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2022-09-14T00:30:00",
     "location": "Figueroa Street and 31st Street-east sidewalk",
-    "url": "https://dps.usc.edu/2022/09/14/robbery-91/"
+    "url": "https://dps.usc.edu/2022/09/14/robbery-91/",
+    "source": "DPS"
   },
   {
     "lat": 34.032309565599,
     "lon": -118.290387105856,
     "method": "address",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2022-08-26T22:30:00",
     "location": "2617 Menlo Ave. Los Angeles CA, 90007",
-    "url": "https://dps.usc.edu/2022/08/27/burglary-14/"
+    "url": "https://dps.usc.edu/2022/08/27/burglary-14/",
+    "source": "DPS"
   },
   {
     "lat": 34.032446177274,
     "lon": -118.281802652152,
     "method": "block",
     "offense": "Sexual Battery/Fondling",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2022-08-21T04:45:00",
     "location": "2300 block of Portland Street",
-    "url": "https://dps.usc.edu/2022/08/21/sexual-battery-fondling-14/"
+    "url": "https://dps.usc.edu/2022/08/21/sexual-battery-fondling-14/",
+    "source": "DPS"
   },
   {
     "lat": 34.0302888,
     "lon": -118.2874446,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2022-08-06T09:16:00",
     "location": "Off campus at 27th St. and Orchard Ave, southeast corner.",
-    "url": "https://dps.usc.edu/2022/08/06/robbery-88/"
+    "url": "https://dps.usc.edu/2022/08/06/robbery-88/",
+    "source": "DPS"
   },
   {
     "lat": 34.025374775503,
     "lon": -118.277851769845,
     "method": "address",
     "offense": "Robbery",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2022-07-15T15:58:00",
     "location": "Off Campus at the Jack in the Box Restaurant 2921 Figueroa Street",
-    "url": "https://dps.usc.edu/2022/07/15/robbery-87/"
+    "url": "https://dps.usc.edu/2022/07/15/robbery-87/",
+    "source": "DPS"
   },
   {
     "lat": 34.02832786416,
     "lon": -118.2853068718,
     "method": "block",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2022-07-09T01:00:00",
     "location": "Off-campus 1100 block of 29th Street",
-    "url": "https://dps.usc.edu/2022/07/09/burglary-13/"
+    "url": "https://dps.usc.edu/2022/07/09/burglary-13/",
+    "source": "DPS"
   },
   {
     "lat": 34.0231119,
     "lon": -118.291561,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2022-06-08T20:00:00",
     "location": "Off-Campus, at the Taco Bell parking lot on Vermont Avenue and 36th Street",
-    "url": "https://dps.usc.edu/2022/06/08/robbery-84/"
+    "url": "https://dps.usc.edu/2022/06/08/robbery-84/",
+    "source": "DPS"
   },
   {
     "lat": 34.02737064418,
     "lon": -118.290361914995,
     "method": "block",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2022-05-27T06:25:00",
     "location": "Off-Campus, the 1200 block of W. 30th Street",
-    "url": "https://dps.usc.edu/2022/05/27/burglary-12/"
+    "url": "https://dps.usc.edu/2022/05/27/burglary-12/",
+    "source": "DPS"
   },
   {
     "lat": 34.026603495578,
     "lon": -118.278652539156,
     "method": "address",
     "offense": "Attempted Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2022-04-28T09:04:00",
     "location": "668 W. 28th Street",
-    "url": "https://dps.usc.edu/2022/04/28/attempted-robbery-7/"
+    "url": "https://dps.usc.edu/2022/04/28/attempted-robbery-7/",
+    "source": "DPS"
   },
   {
     "lat": 34.025759566929,
     "lon": -118.277606568908,
     "method": "address",
     "offense": "Robbery",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2022-04-12T01:35:00",
     "location": "Off campus on the sidewalk in front of the Domino’s Pizza at 2803 S. Figueroa Street",
-    "url": "https://dps.usc.edu/2022/04/12/robbery-83/"
+    "url": "https://dps.usc.edu/2022/04/12/robbery-83/",
+    "source": "DPS"
   },
   {
     "lat": 34.0213554,
     "lon": -118.2787529,
     "method": "intersection",
     "offense": "Attempted Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2022-04-04T16:19:00",
     "location": "Off-Campus, at the Metro train platform on Jefferson Boulevard and Flower Street",
-    "url": "https://dps.usc.edu/2022/04/04/attempted-robbery-6/"
+    "url": "https://dps.usc.edu/2022/04/04/attempted-robbery-6/",
+    "source": "DPS"
   },
   {
     "lat": 34.0272223,
     "lon": -118.2766249,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2022-03-25T03:41:00",
     "location": "Off-Campus, at the Bank of America located at the southwest corner of 27th Street and Figueroa Street",
-    "url": "https://dps.usc.edu/2022/03/25/robbery-82/"
+    "url": "https://dps.usc.edu/2022/03/25/robbery-82/",
+    "source": "DPS"
   },
   {
     "lat": 34.01827575,
     "lon": -118.28232065,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2022-02-04T15:53:00",
     "location": "Off-campus, at the southwest corner of Exposition Boulevard and Figueroa Street",
-    "url": "https://dps.usc.edu/2022/02/04/robbery-78/"
+    "url": "https://dps.usc.edu/2022/02/04/robbery-78/",
+    "source": "DPS"
   },
   {
     "lat": 34.016322622798,
     "lon": -118.282154575421,
     "method": "address",
     "offense": "Sexual Battery/Fondling",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2022-02-04T08:50:00",
     "location": "Off-campus at 3762 S. Flower St.",
-    "url": "https://dps.usc.edu/2022/02/04/sexual-battery-fondling-12/"
+    "url": "https://dps.usc.edu/2022/02/04/sexual-battery-fondling-12/",
+    "source": "DPS"
   },
   {
     "lat": 34.0219044,
     "lon": -118.2800026,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2022-02-02T13:42:00",
     "location": "Off-campus, at the southeast corner of Jefferson Boulevard and Figueroa Street and the northeast corner of Figueroa Street and Exposition Boulevard",
-    "url": "https://dps.usc.edu/2022/02/02/robbery-77/"
+    "url": "https://dps.usc.edu/2022/02/02/robbery-77/",
+    "source": "DPS"
   },
   {
     "lat": 34.0241479,
     "lon": -118.2785786,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2022-01-28T21:00:00",
     "location": "Off-campus, on the westside of Figueroa Street, north of 31st Street",
-    "url": "https://dps.usc.edu/2022/01/28/robbery-75/"
+    "url": "https://dps.usc.edu/2022/01/28/robbery-75/",
+    "source": "DPS"
   },
   {
     "lat": 34.027564568112,
     "lon": -118.2812338182,
     "method": "address",
     "offense": "Robbery",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2021-12-22T18:00:00",
     "location": "Off-campus at the parking lot adjacent to 2831 University Ave.",
-    "url": "https://dps.usc.edu/2021/12/22/robbery-70/"
+    "url": "https://dps.usc.edu/2021/12/22/robbery-70/",
+    "source": "DPS"
   },
   {
     "lat": 34.0191042,
     "lon": -118.2917909,
     "method": "intersection",
     "offense": "Brandishing a Weapon",
-    "severity": 3.5,
+    "severity": 7.0,
     "occurred_at": "2021-12-21T16:15:00",
     "location": "Off campus on the west side of Vermont Avenue at 37th Drive",
-    "url": "https://dps.usc.edu/2021/12/21/brandishing-a-weapon/"
+    "url": "https://dps.usc.edu/2021/12/21/brandishing-a-weapon/",
+    "source": "DPS"
   },
   {
     "lat": 34.022907386122,
     "lon": -118.29160616255,
     "method": "address",
     "offense": "Robbery",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2021-12-19T15:07:00",
     "location": "Off campus in the Smart and Final parking lot at 3607 S. Vermont Avenue",
-    "url": "https://dps.usc.edu/2021/12/19/robbery-69/"
+    "url": "https://dps.usc.edu/2021/12/19/robbery-69/",
+    "source": "DPS"
   },
   {
     "lat": 34.0327699,
     "lon": -118.2874362,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2021-12-10T23:45:00",
     "location": "Off-campus on the westside of Orchard Avenue, south of Adams Boulevard",
-    "url": "https://dps.usc.edu/2021/12/11/robbery-68/"
+    "url": "https://dps.usc.edu/2021/12/11/robbery-68/",
+    "source": "DPS"
   },
   {
     "lat": 34.01827575,
     "lon": -118.28232065,
     "method": "intersection",
     "offense": "Hate Crime",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2021-12-05T19:15:00",
     "location": "Southeast corner of Exposition Boulevard and Figueroa Street",
-    "url": "https://dps.usc.edu/2021/12/05/hate-crime-criminal-threat/"
+    "url": "https://dps.usc.edu/2021/12/05/hate-crime-criminal-threat/",
+    "source": "DPS"
   },
   {
     "lat": 34.023053711596,
     "lon": -118.29344430076,
     "method": "address",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2021-12-02T20:15:00",
     "location": "Off-campus at 1130 W. 36th Street",
-    "url": "https://dps.usc.edu/2021/12/02/robbery-66/"
+    "url": "https://dps.usc.edu/2021/12/02/robbery-66/",
+    "source": "DPS"
   },
   {
     "lat": 34.0252188,
     "lon": -118.2828065,
     "method": "intersection",
     "offense": "Battery",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2021-11-29T16:20:00",
     "location": "Off campus in the area of 32nd Street and University Avenue. Similar incidents have occurred at 30th Street and Figueroa Street, 32nd Street and Hoover Street, and the west alley of Figueroa Street north of Jefferson Boulevard.",
-    "url": "https://dps.usc.edu/2021/11/29/battery/"
+    "url": "https://dps.usc.edu/2021/11/29/battery/",
+    "source": "DPS"
   },
   {
     "lat": 34.0302307227,
     "lon": -118.286292367037,
     "method": "address",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2021-11-16T04:47:00",
     "location": "Off campus at 1186 W. 27th Street",
-    "url": "https://dps.usc.edu/2021/11/16/burglary-10/"
+    "url": "https://dps.usc.edu/2021/11/16/burglary-10/",
+    "source": "DPS"
   },
   {
     "lat": 34.0199696,
     "lon": -118.2977281,
     "method": "intersection",
     "offense": "Attempted Robbery",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2021-11-15T12:00:00",
     "location": "Off campus at 37th Place and Raymond Avenue",
-    "url": "https://dps.usc.edu/2021/11/15/attempted-robbery-5/"
+    "url": "https://dps.usc.edu/2021/11/15/attempted-robbery-5/",
+    "source": "DPS"
   },
   {
     "lat": 34.025933798708,
     "lon": -118.280936737767,
     "method": "address",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2021-11-14",
     "location": "Off campus in front of 3038 S. Royal Street",
-    "url": "https://dps.usc.edu/2021/11/14/robbery-64/"
+    "url": "https://dps.usc.edu/2021/11/14/robbery-64/",
+    "source": "DPS"
   },
   {
     "lat": 34.0211779,
     "lon": -118.2805393,
     "method": "intersection",
     "offense": "Brandishing a Firearm",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2021-11-05T08:57:00",
     "location": "West side of Figueroa Street at 34th Street",
-    "url": "https://dps.usc.edu/2021/11/05/brandishing-a-firearm-3/"
+    "url": "https://dps.usc.edu/2021/11/05/brandishing-a-firearm-3/",
+    "source": "DPS"
   },
   {
     "lat": 34.0252185038,
     "lon": -118.278520684654,
     "method": "address",
     "offense": "Sexual Battery/Fondling",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2021-10-30T00:24:00",
     "location": "628 30th St.",
-    "url": "https://dps.usc.edu/2021/10/30/sexual-battery-fondling-11/"
+    "url": "https://dps.usc.edu/2021/10/30/sexual-battery-fondling-11/",
+    "source": "DPS"
   },
   {
     "lat": 34.030231772797,
     "lon": -118.286966879543,
     "method": "block",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2021-09-13T11:00:00",
     "location": "Off campus in the 1200 block of West 27th Street",
-    "url": "https://dps.usc.edu/2021/09/13/burglary-9/"
+    "url": "https://dps.usc.edu/2021/09/13/burglary-9/",
+    "source": "DPS"
   },
   {
     "lat": 34.01825115,
     "lon": -118.2915529,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2021-09-04T19:30:00",
     "location": "Off campus in Jesse Brewer Park at Exposition Boulevard and Vermont Avenue",
-    "url": "https://dps.usc.edu/2021/09/05/robbery-61/"
+    "url": "https://dps.usc.edu/2021/09/05/robbery-61/",
+    "source": "DPS"
   },
   {
     "lat": 34.018096744788,
     "lon": -118.288883424976,
     "method": "block",
     "offense": "Lewd Conduct",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2021-08-16T13:51:00",
     "location": "800 block of Exposition Boulevard.",
-    "url": "https://dps.usc.edu/2021/08/16/lewd-conduct-5/"
+    "url": "https://dps.usc.edu/2021/08/16/lewd-conduct-5/",
+    "source": "DPS"
   },
   {
     "lat": 34.02737064418,
     "lon": -118.290361914995,
     "method": "block",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2021-08-07T16:30:00",
     "location": "1200 block of W. 30th Street",
-    "url": "https://dps.usc.edu/2021/08/07/burglary-8/"
+    "url": "https://dps.usc.edu/2021/08/07/burglary-8/",
+    "source": "DPS"
   },
   {
     "lat": 34.028285786595,
     "lon": -118.279488897654,
     "method": "block",
     "offense": "Grand Theft",
-    "severity": 1.2,
+    "severity": 2.4,
     "occurred_at": "2021-07-22T17:20:00",
     "location": "Off campus in the 700 block of W. 27th Street",
-    "url": "https://dps.usc.edu/2021/07/22/grand-theft-3/"
+    "url": "https://dps.usc.edu/2021/07/22/grand-theft-3/",
+    "source": "DPS"
   },
   {
     "lat": 34.027963592875,
     "lon": -118.278763212676,
     "method": "address",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2021-07-22T12:30:00",
     "location": "Off campus at 710 W. 27th St.",
-    "url": "https://dps.usc.edu/2021/07/22/robbery-59/"
+    "url": "https://dps.usc.edu/2021/07/22/robbery-59/",
+    "source": "DPS"
   },
   {
     "lat": 34.0136286,
     "lon": -118.2803164,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2021-07-02T01:35:00",
     "location": "Off campus in the area of 39th St. and Grand Ave.",
-    "url": "https://dps.usc.edu/2021/07/02/robbery-58/"
+    "url": "https://dps.usc.edu/2021/07/02/robbery-58/",
+    "source": "DPS"
   },
   {
     "lat": 34.0272223,
     "lon": -118.2766249,
     "method": "intersection",
     "offense": "Sexual Battery",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2021-05-22T14:30:00",
     "location": "Off campus at the southeast corner of 27th Street and Figueroa Street",
-    "url": "https://dps.usc.edu/2021/05/22/sexual-battery-14/"
+    "url": "https://dps.usc.edu/2021/05/22/sexual-battery-14/",
+    "source": "DPS"
   },
   {
     "lat": 34.024470855177,
     "lon": -118.2959582912,
     "method": "block",
     "offense": "Lewd Conduct",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2021-05-18T18:00:00",
     "location": "Off-campus in the 1200 block of W. 35th Street.",
-    "url": "https://dps.usc.edu/2021/05/18/lewd-conduct-4/"
+    "url": "https://dps.usc.edu/2021/05/18/lewd-conduct-4/",
+    "source": "DPS"
   },
   {
     "lat": 34.034237412761,
     "lon": -118.291472636495,
     "method": "address",
     "offense": "Robbery/Hate Crime",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2021-05-07T23:00:00",
     "location": "Off campus at 2414 Vermont Ave (rear parking lot of La Barca’s Restaurant)",
-    "url": "https://dps.usc.edu/2021/05/08/robbery-hate-crime/"
+    "url": "https://dps.usc.edu/2021/05/08/robbery-hate-crime/",
+    "source": "DPS"
   },
   {
     "lat": 34.027399,
     "lon": -118.2839787,
     "method": "intersection",
     "offense": "Lewd Conduct",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2021-05-01T10:40:00",
     "location": "Off-campus on Hoover Street at 30th Street.",
-    "url": "https://dps.usc.edu/2021/05/01/lewd-conduct-3/"
+    "url": "https://dps.usc.edu/2021/05/01/lewd-conduct-3/",
+    "source": "DPS"
   },
   {
     "lat": 34.022022519627,
     "lon": -118.293052776276,
     "method": "block",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2021-04-19T17:20:00",
     "location": "Off-campus in the 1100 block of 36th Place",
-    "url": "https://dps.usc.edu/2021/04/20/burglary-7/"
+    "url": "https://dps.usc.edu/2021/04/20/burglary-7/",
+    "source": "DPS"
   },
   {
     "lat": 34.0255479,
     "lon": -118.2882466,
     "method": "intersection",
     "offense": "Lewd Conduct",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2021-04-13T18:30:00",
     "location": "Off-campus on Jefferson Boulevard at Orchard Avenue",
-    "url": "https://dps.usc.edu/2021/04/13/lewd-conduct/"
+    "url": "https://dps.usc.edu/2021/04/13/lewd-conduct/",
+    "source": "DPS"
   },
   {
     "lat": 34.0218792,
     "lon": -118.2977289,
     "method": "intersection",
     "offense": "Attempted Robbery",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2021-03-26T17:00:00",
     "location": "Off campus at the northwest corner of 36th Place and Raymond Avenue. Off campus on the northside of 29th Street east of Orchard Avenue.",
-    "url": "https://dps.usc.edu/2021/03/26/attempted-robbery-4/"
+    "url": "https://dps.usc.edu/2021/03/26/attempted-robbery-4/",
+    "source": "DPS"
   },
   {
     "lat": 34.025182520711,
     "lon": -118.282895204043,
     "method": "address",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2021-03-12T11:59:00",
     "location": "Off campus at 844 W. 32nd St.",
-    "url": "https://dps.usc.edu/2021/03/12/robbery-53/"
+    "url": "https://dps.usc.edu/2021/03/12/robbery-53/",
+    "source": "DPS"
   },
   {
     "lat": 34.032225954178,
     "lon": -118.300317556747,
     "method": "address",
     "offense": "Robbery Update",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2021-02-08T01:30:00",
     "location": "Off campus at Amin’s Oil station at 2603 S. Normandie Ave.",
-    "url": "https://dps.usc.edu/2021/02/10/robbery-update/"
+    "url": "https://dps.usc.edu/2021/02/10/robbery-update/",
+    "source": "DPS"
   },
   {
     "lat": 34.032225954178,
     "lon": -118.300317556747,
     "method": "address",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2021-02-08T01:30:00",
     "location": "Off campus at Amin’s Oil station at 2603 S. Normandie Ave.",
-    "url": "https://dps.usc.edu/2021/02/08/robbery-51/"
+    "url": "https://dps.usc.edu/2021/02/08/robbery-51/",
+    "source": "DPS"
   },
   {
     "lat": 34.01825115,
     "lon": -118.2915529,
     "method": "intersection",
     "offense": "Aggravated Assault",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2021-02-06T06:30:00",
     "location": "Off-campus at Exposition Boulevard and Vermont Avenue on the East Metro platform.",
-    "url": "https://dps.usc.edu/2021/02/06/aggravated-assault-3/"
+    "url": "https://dps.usc.edu/2021/02/06/aggravated-assault-3/",
+    "source": "DPS"
   },
   {
     "lat": 34.024363050000005,
     "lon": -118.28102065,
     "method": "intersection",
     "offense": "Sexual Assault",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2021-01-23T02:20:00",
     "location": "Off-campus in the Shrine Auditorium parking structure at 3208 Royal Street.",
-    "url": "https://dps.usc.edu/2021/01/23/sexual-assault-3/"
+    "url": "https://dps.usc.edu/2021/01/23/sexual-assault-3/",
+    "source": "DPS"
   },
   {
     "lat": 34.0255129,
     "lon": -118.2948454,
     "method": "intersection",
     "offense": "Attempted Murder",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2021-01-17T01:00:00",
     "location": "Off campus at Jefferson Boulevard and Walton Avenue",
-    "url": "https://dps.usc.edu/2021/01/17/attempted-murder/"
+    "url": "https://dps.usc.edu/2021/01/17/attempted-murder/",
+    "source": "DPS"
   },
   {
     "lat": 34.02832786416,
     "lon": -118.2853068718,
     "method": "block",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2020-12-22T02:41:00",
     "location": "Off campus in the 1100 block W. 29th Street.",
-    "url": "https://dps.usc.edu/2020/12/22/burglary-5/"
+    "url": "https://dps.usc.edu/2020/12/22/burglary-5/",
+    "source": "DPS"
   },
   {
     "lat": 34.018109193844,
     "lon": -118.296029938907,
     "method": "block",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2020-12-13T23:30:00",
     "location": "Off-campus in the 1100 block of Exposition Boulevard.",
-    "url": "https://dps.usc.edu/2020/12/14/burglary-4/"
+    "url": "https://dps.usc.edu/2020/12/14/burglary-4/",
+    "source": "DPS"
   },
   {
     "lat": 34.027368570687,
     "lon": -118.288027706791,
     "method": "block",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2020-11-27T13:55:00",
     "location": "Off campus in the 1100 block of West 30th Street.",
-    "url": "https://dps.usc.edu/2020/11/27/robbery-50/"
+    "url": "https://dps.usc.edu/2020/11/27/robbery-50/",
+    "source": "DPS"
   },
   {
     "lat": 34.031992533558,
     "lon": -118.288750900674,
     "method": "block",
     "offense": "Assault with a deadly weapon",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2020-11-19T18:01:00",
     "location": "Off campus in the 2600 block of Ellendale Place.",
-    "url": "https://dps.usc.edu/2020/11/19/assault-with-a-deadly-weapon-4/"
+    "url": "https://dps.usc.edu/2020/11/19/assault-with-a-deadly-weapon-4/",
+    "source": "DPS"
   },
   {
     "lat": 34.032446177274,
     "lon": -118.281802652152,
     "method": "block",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2020-11-19T18:35:00",
     "location": "Off-campus in the 2300 block of Portland Avenue.",
-    "url": "https://dps.usc.edu/2020/11/19/burglary-3/"
+    "url": "https://dps.usc.edu/2020/11/19/burglary-3/",
+    "source": "DPS"
   },
   {
     "lat": 34.01825115,
     "lon": -118.2915529,
     "method": "intersection",
     "offense": "Grand Theft",
-    "severity": 1.2,
+    "severity": 2.4,
     "occurred_at": "2020-11-19T14:25:00",
     "location": "Off campus at the Expo/Vermont light rail station",
-    "url": "https://dps.usc.edu/2020/11/19/grand-theft-2/"
+    "url": "https://dps.usc.edu/2020/11/19/grand-theft-2/",
+    "source": "DPS"
   },
   {
     "lat": 34.0236956,
     "lon": -118.3002566,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2020-11-15T18:30:00",
     "location": "Off campus at the northeast corner of Normandie Avenue and 35th Place.",
-    "url": "https://dps.usc.edu/2020/11/16/robbery-49/"
+    "url": "https://dps.usc.edu/2020/11/16/robbery-49/",
+    "source": "DPS"
   },
   {
     "lat": 34.02737064418,
     "lon": -118.290361914995,
     "method": "block",
     "offense": "Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2020-11-07T00:48:00",
     "location": "1200 block of 30th Street (off-campus)",
-    "url": "https://dps.usc.edu/2020/11/07/burglary-2/"
+    "url": "https://dps.usc.edu/2020/11/07/burglary-2/",
+    "source": "DPS"
   },
   {
     "lat": 34.0276006,
     "lon": -118.29156,
     "method": "intersection",
     "offense": "Armed Robbery",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2020-11-04T21:00:00",
     "location": "Off campus at the southwest corner of Vermont Avenue and 30th Street.",
-    "url": "https://dps.usc.edu/2020/11/05/armed-robbery-4/"
+    "url": "https://dps.usc.edu/2020/11/05/armed-robbery-4/",
+    "source": "DPS"
   },
   {
     "lat": 34.0351634,
     "lon": -118.2839986,
     "method": "intersection",
     "offense": "Attempted Robbery. DPS received the report of this crime more than 24 hours after it was committed.",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2020-09-23T15:00:00",
     "location": "Hoover Street at 23rd Street (off-campus)",
-    "url": "https://dps.usc.edu/2020/09/25/attempted-robbery-3/"
+    "url": "https://dps.usc.edu/2020/09/25/attempted-robbery-3/",
+    "source": "DPS"
   },
   {
     "lat": 34.028563493577,
     "lon": -118.283076992445,
     "method": "block",
     "offense": "Residential Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2020-07-25T03:30:00",
     "location": "900 block of 28th Street (off-campus)",
-    "url": "https://dps.usc.edu/2020/07/30/residential-burglary-3/"
+    "url": "https://dps.usc.edu/2020/07/30/residential-burglary-3/",
+    "source": "DPS"
   },
   {
     "lat": 34.022313311755,
     "lon": -118.279803065745,
     "method": "address",
     "offense": "Residential Burglary (Update)",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2020-07-20T16:03:00",
     "location": "University Gateway Apartments, 3335 S. Figueroa St. (off-campus)",
-    "url": "https://dps.usc.edu/2020/07/20/residential-burglary-2/"
+    "url": "https://dps.usc.edu/2020/07/20/residential-burglary-2/",
+    "source": "DPS"
   },
   {
     "lat": 34.0327532,
     "lon": -118.2864695,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2020-06-26T06:00:00",
     "location": "Bus stop at the southwest corner of Adams Avenue and Magnolia Street (off-campus)",
-    "url": "https://dps.usc.edu/2020/06/26/robbery-48/"
+    "url": "https://dps.usc.edu/2020/06/26/robbery-48/",
+    "source": "DPS"
   },
   {
     "lat": 34.021436674297,
     "lon": -118.281402388538,
     "method": "block",
     "offense": "Assault",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2020-06-15T11:25:00",
     "location": "600 block of West 34th Street (on-campus)",
-    "url": "https://dps.usc.edu/2020/06/15/assault-with-a-vehicle/"
+    "url": "https://dps.usc.edu/2020/06/15/assault-with-a-vehicle/",
+    "source": "DPS"
   },
   {
     "lat": 34.031503247153,
     "lon": -118.287358787963,
     "method": "block",
     "offense": "Attempted Residential Burglary",
-    "severity": 0.6,
+    "severity": 1.2,
     "occurred_at": "2020-06-05T15:50:00",
     "location": "2600 Block of South Orchard Avenue (off-campus)",
-    "url": "https://dps.usc.edu/2020/06/05/attempted-residential-burglary/"
+    "url": "https://dps.usc.edu/2020/06/05/attempted-residential-burglary/",
+    "source": "DPS"
   },
   {
     "lat": 34.018073069381,
     "lon": -118.278640124756,
     "method": "block",
     "offense": "Aggravated Assault",
-    "severity": 3.0,
+    "severity": 6.0,
     "occurred_at": "2020-05-04T02:28:00",
     "location": "Homeless encampment in the 3500 block of South Hope Street (off-campus)",
-    "url": "https://dps.usc.edu/2020/05/05/aggravated-assault/"
+    "url": "https://dps.usc.edu/2020/05/05/aggravated-assault/",
+    "source": "DPS"
   },
   {
     "lat": 34.027368570687,
     "lon": -118.288027706791,
     "method": "block",
     "offense": "Sexual Battery",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2020-02-28T19:00:00",
     "location": "1100 block of West 30th Street (off-campus)",
-    "url": "https://dps.usc.edu/2020/03/01/sexual-battery-9/"
+    "url": "https://dps.usc.edu/2020/03/01/sexual-battery-9/",
+    "source": "DPS"
   },
   {
     "lat": 34.0219044,
     "lon": -118.2800026,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2020-02-25T10:40:00",
     "location": "West alley of Figueroa Street north of Jefferson Boulevard",
-    "url": "https://dps.usc.edu/2020/02/26/robbery-46/"
+    "url": "https://dps.usc.edu/2020/02/26/robbery-46/",
+    "source": "DPS"
   },
   {
     "lat": 34.025373381838,
     "lon": -118.278868141782,
     "method": "block",
     "offense": "Three suspects approached the male victim (student) at the corner of 30th Street and Shrine Place. The suspects grabbed the victim and prevented him from leaving. A suspect snatched the victim’s phone from his right hand, and all three suspects fled to a parked vehicle nearby.",
-    "severity": 1.0,
+    "severity": 2.0,
     "occurred_at": "2020-01-25T19:05:00",
     "location": "600 block of W 30th Street (off-campus)",
-    "url": "https://dps.usc.edu/2020/01/26/robbery-45/"
+    "url": "https://dps.usc.edu/2020/01/26/robbery-45/",
+    "source": "DPS"
   },
   {
     "lat": 34.028285786595,
     "lon": -118.279488897654,
     "method": "block",
     "offense": "The victim (non-student) agreed to sell his laptop via an online marketplace and met the suspects in person in the 700 block of W 27th Street to complete the purchase. The suspects displayed a handgun and stole the victim’s laptop. The suspects then ran to their parked vehicle nearby and drove away.",
-    "severity": 1.0,
+    "severity": 2.0,
     "occurred_at": "2020-01-25T11:20:00",
     "location": "700 block of W 27th Street (off campus) 1400 block of W 27th Street (off campus)",
-    "url": "https://dps.usc.edu/2020/01/25/robbery-44/"
+    "url": "https://dps.usc.edu/2020/01/25/robbery-44/",
+    "source": "DPS"
   },
   {
     "lat": 34.0344041,
     "lon": -118.2839976,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2018-01-19T02:00:00",
     "location": "24th St and Hoover St (off campus)",
-    "url": "https://dps.usc.edu/2019/01/22/robbery-40/"
+    "url": "https://dps.usc.edu/2019/01/22/robbery-40/",
+    "source": "DPS"
   },
   {
     "lat": 34.0285392,
     "lon": -118.29155854999999,
     "method": "intersection",
     "offense": "Attempt Robbery",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2018-12-20T17:50:00",
     "location": "S/E corner 29th Street and Vermont Avenue (off campus)",
-    "url": "https://dps.usc.edu/2018/12/21/attempt-robbery-6/"
+    "url": "https://dps.usc.edu/2018/12/21/attempt-robbery-6/",
+    "source": "DPS"
   },
   {
     "lat": 34.032372618496,
     "lon": -118.2802234085,
     "method": "block",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2018-12-17T22:00:00",
     "location": "2300 Block of Scarff Street (off campus)",
-    "url": "https://dps.usc.edu/2018/12/18/robbery-39/"
+    "url": "https://dps.usc.edu/2018/12/18/robbery-39/",
+    "source": "DPS"
   },
   {
     "lat": 34.0257995,
     "lon": -118.2775312,
     "method": "intersection",
     "offense": "Sexual Battery",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2018-10-28T01:45:00",
     "location": "Figueroa Street north of 29th Street",
-    "url": "https://dps.usc.edu/2018/10/29/sexual-battery-6/"
+    "url": "https://dps.usc.edu/2018/10/29/sexual-battery-6/",
+    "source": "DPS"
   },
   {
     "lat": 34.018974766171,
     "lon": -118.296093381465,
     "method": "block",
     "offense": "Robberies",
-    "severity": 1.0,
+    "severity": 2.0,
     "occurred_at": "2018-10-15",
     "location": "The 1200 Block of West 37th Drive (off campus) The 1200 Block of West 37th Street (off campus)",
-    "url": "https://dps.usc.edu/2018/10/15/robberies/"
+    "url": "https://dps.usc.edu/2018/10/15/robberies/",
+    "source": "DPS"
   },
   {
     "lat": 34.031706466708,
     "lon": -118.288750900697,
     "method": "address",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2018-03-31T16:10:00",
     "location": "2670 Ellendale Place (off campus)",
-    "url": "https://dps.usc.edu/2018/03/31/robbery-35/"
+    "url": "https://dps.usc.edu/2018/03/31/robbery-35/",
+    "source": "DPS"
   },
   {
     "lat": 34.0276748,
     "lon": -118.2749528,
     "method": "intersection",
     "offense": "Robbery",
-    "severity": 2.5,
+    "severity": 5.0,
     "occurred_at": "2018-03-25T03:32:00",
     "location": "Adams and Flower (off campus)",
-    "url": "https://dps.usc.edu/2018/03/26/robbery-34/"
+    "url": "https://dps.usc.edu/2018/03/26/robbery-34/",
+    "source": "DPS"
   },
   {
     "lat": 34.026222226482,
     "lon": -118.286253574342,
     "method": "address",
     "offense": "Lewd Conduct and Indecent Exposure",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2018-03-22T11:15:00",
     "location": "North Alley of 3131 McClintock Ave (off campus)",
-    "url": "https://dps.usc.edu/2018/03/23/lewd-conduct-and-indecent-exposure/"
+    "url": "https://dps.usc.edu/2018/03/23/lewd-conduct-and-indecent-exposure/",
+    "source": "DPS"
   },
   {
     "lat": 34.0211044,
     "lon": -118.29132295,
     "method": "intersection",
     "offense": "Attempt Robbery",
-    "severity": 2.0,
+    "severity": 4.0,
     "occurred_at": "2018-01-24T14:20:00",
     "location": "37th Street west of Vermont Avenue (off campus)",
-    "url": "https://dps.usc.edu/2018/01/25/attempt-robbery-5/"
+    "url": "https://dps.usc.edu/2018/01/25/attempt-robbery-5/",
+    "source": "DPS"
   }
 ]

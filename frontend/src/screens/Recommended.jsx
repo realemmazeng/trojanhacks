@@ -1,10 +1,43 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Icon from '../components/Icon.jsx';
 import PathMap, { COLORS } from '../components/PathMap.jsx';
 import { ShareSheet } from '../components/Sheets.jsx';
 import { formatClock, formatUpdated } from '../lib/format.js';
 
-export default function Recommended({ trip, friends, onShareChange, onAddFriends, onBack, onDetails, onStart }) {
+// Same steps and labels as the original route-preference slider.
+const PREF_LABELS = { 0: 'Fastest', 0.25: 'Mostly fast', 0.5: 'Slightly safer', 0.75: 'Safer', 1: 'Balanced', 1.25: 'Cautious', 1.5: 'More cautious', 1.75: 'Very cautious', 2: 'Safest' };
+
+/** Fastest <-> Safest slider. Re-plans the path shortly after the user stops dragging. */
+function RoutePreference({ value, onChange, busy }) {
+  const [v, setV] = useState(value);
+  useEffect(() => setV(value), [value]);
+  useEffect(() => {
+    if (v === value) return undefined;
+    const id = setTimeout(() => onChange(v), 450);
+    return () => clearTimeout(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [v]);
+  return (
+    <div className="pref">
+      <div className="pref-head">
+        <label htmlFor="route-pref" style={{ fontSize: 15, fontWeight: 600 }}>Route preference</label>
+        <span className="small" style={{ color: 'var(--lit)', fontWeight: 600 }} aria-live="polite">
+          {busy ? 'Updating…' : PREF_LABELS[v] ?? v}
+        </span>
+      </div>
+      <input
+        id="route-pref"
+        type="range" min="0" max="2" step="0.25"
+        value={v}
+        onChange={(e) => setV(Number(e.target.value))}
+        aria-valuetext={PREF_LABELS[v]}
+      />
+      <div className="pref-ends" aria-hidden="true"><span>Fastest</span><span>Safest</span></div>
+    </div>
+  );
+}
+
+export default function Recommended({ trip, friends, onShareChange, onAddFriends, onBack, onDetails, onStart, safety, onSafetyChange, refreshing, refreshError }) {
   const { origin, destination, departAt, later, result, sharedWith } = trip;
   const rec = result.recommended;
   const fast = result.fastest;
@@ -44,7 +77,10 @@ export default function Recommended({ trip, friends, onShareChange, onAddFriends
           {result.extra_minutes > 0 && <span className="tag-caution">+{result.extra_minutes} min vs fastest</span>}
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+        <RoutePreference value={safety} onChange={onSafetyChange} busy={refreshing} />
+        {refreshError && <p className="error" role="alert">{refreshError}</p>}
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8, opacity: refreshing ? 0.5 : 1, transition: 'opacity 0.2s' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <h2 className="h2">Why this path?</h2>
             <button className="pill-link" onClick={onDetails}>See details <Icon name="next" size={14} width={2.4} /></button>
@@ -87,7 +123,7 @@ export default function Recommended({ trip, friends, onShareChange, onAddFriends
           </span>
           <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--lit)' }}>{sharedNames.length ? 'Edit' : 'Share'}</span>
         </button>
-        <button className="btn btn-primary" onClick={onStart}>Start walking</button>
+        <button className="btn btn-primary sticky-cta" onClick={onStart} disabled={refreshing}>Start walking</button>
       </div>
       {sharing && (
         <ShareSheet

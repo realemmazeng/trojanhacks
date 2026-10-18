@@ -3,7 +3,7 @@ import { COLORS } from '../components/PathMap.jsx';
 import { PLACES } from '../data/places.js';
 import { departureLabel } from '../lib/time.js';
 
-export default function Home({ userName, departure, recents, friendsCount, onSearch, onOpenDeparture, onPick, onGoFriends }) {
+export default function Home({ userName, departure, recents, friendsCount, onSearch, onOpenDeparture, onPick, onGoFriends, onSos }) {
   const suggestions = recents.length ? recents.slice(0, 3) : PLACES.slice(0, 3);
 
   return (
@@ -12,9 +12,9 @@ export default function Home({ userName, departure, recents, friendsCount, onSea
         <span style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 15, fontWeight: 600, color: 'var(--text-2)' }}>
           <Icon name="dot" size={14} color={COLORS.lit} /> Current location
         </span>
-        <a className="sos-btn" href="tel:911" aria-label="Emergency call 911" style={{ textDecoration: 'none' }}>
+        <button className="sos-btn" onClick={onSos} aria-label="Emergency options">
           <Icon name="shield" size={18} width={2.2} />SOS
-        </a>
+        </button>
       </div>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>

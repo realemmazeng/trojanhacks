@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import L from 'leaflet';
-import { CircleMarker, MapContainer, Marker, Polygon, Polyline, TileLayer, useMap } from 'react-leaflet';
+import { Circle, CircleMarker, MapContainer, Marker, Polygon, Polyline, TileLayer, useMap } from 'react-leaflet';
 import { STREETS } from '../data/places.js';
 
 const OFFLINE = import.meta.env.VITE_OFFLINE_MAP === '1';
@@ -50,7 +50,7 @@ function Follow({ position }) {
  * - paths: [{ coords, color, dashed, weight, opacity }]
  * - area: polygon coords (service / patrol area)
  * - origin, destination: [lat, lng]
- * - me: { position, color } — the user's live location
+ * - me: { position, color, accuracy? } — the user's live location (accuracy in metres draws a halo)
  */
 export default function PathMap({
   paths = [], area, origin, destination, me, follow = false,
@@ -104,7 +104,9 @@ export default function PathMap({
         )}
         {me && (
           <>
-            <CircleMarker center={me.position} radius={20} pathOptions={{ stroke: false, fillColor: me.color, fillOpacity: 0.2 }} />
+            {me.accuracy
+              ? <Circle center={me.position} radius={Math.min(60, me.accuracy)} pathOptions={{ stroke: false, fillColor: me.color, fillOpacity: 0.18 }} />
+              : <CircleMarker center={me.position} radius={20} pathOptions={{ stroke: false, fillColor: me.color, fillOpacity: 0.2 }} />}
             <CircleMarker center={me.position} radius={9} pathOptions={{ color: COLORS.night, weight: 3, fillColor: me.color, fillOpacity: 1 }} />
           </>
         )}

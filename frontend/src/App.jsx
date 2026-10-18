@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import BottomNav from './components/BottomNav.jsx';
-import { DepartureSheet } from './components/Sheets.jsx';
+import { DepartureSheet, SosSheet } from './components/Sheets.jsx';
 import Splash from './screens/Splash.jsx';
 import Login from './screens/Login.jsx';
 import Home from './screens/Home.jsx';
@@ -39,10 +39,15 @@ export default function App() {
   const [trip, setTrip] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [safety, setSafety] = useState(() => load('safety', 1)); // 0 = fastest … 2 = safest
+  const [refreshing, setRefreshing] = useState(false);
+  const [refreshError, setRefreshError] = useState('');
+  const [showSos, setShowSos] = useState(false);
 
   useEffect(() => save('user', user), [user]);
   useEffect(() => save('friends', friends), [friends]);
   useEffect(() => save('history', history), [history]);
+  useEffect(() => save('safety', safety), [safety]);
 
   const openTab = (t) => { setTab(t); setScreen('tabs'); };
   const realHistory = history.filter((h) => !h.sample);
@@ -62,7 +67,7 @@ export default function App() {
     try {
       const when = departAt(departure);
       const origin = await currentOrigin();
-      const result = await getPath({ origin, destination: dest, departAt: when });
+      const result = await getPath({ origin, destination: dest, departAt: when, safety });
       // Mock data always returns the same path, so pin the destination to where that path ends.
       const end = result.recommended.geometry[result.recommended.geometry.length - 1];
       const destination = usingMock ? { ...dest, lat: end[0], lng: end[1] } : dest;
@@ -80,6 +85,30 @@ export default function App() {
     } finally {
       setLoading(false);
     }
+  };
+
+  // Route-preference slider moved on the Recommended screen: re-plan the same trip.
+  const changeSafety = async (value) => {
+    setSafety(value);
+    if (!trip) return;
+    setRefreshing(true);
+    setRefreshError('');
+    try {
+      const result = await getPath({ origin: trip.origin, destination: trip.destination, departAt: trip.departAt, safety: value });
+      setTrip((t) => ({ ...t, result }));
+    } catch (e) {
+      setRefreshError(`Couldn't update the path. ${e.message.replace(/\.$/, '')}.`);
+    } finally {
+      setRefreshing(false);
+    }
+  };
+
+  // Off the path during a walk: new path from the user's current GPS position.
+  const rerouteFrom = async ([lat, lng]) => {
+    const origin = { id: 'current', name: 'Current location', address: 'From your GPS', lat, lng };
+    const when = departAt({ later: false });
+    const result = await getPath({ origin, destination: trip.destination, departAt: when, safety });
+    setTrip((t) => ({ ...t, origin, departAt: when, later: false, result }));
   };
 
   const finishWalk = () => {
@@ -121,6 +150,7 @@ export default function App() {
               onOpenDeparture={() => setShowDeparture(true)}
               onPick={pickDestination}
               onGoFriends={() => setTab('friends')}
+              onSos={() => setShowSos(true)}
             />
           )}
           {tab === 'friends' && (
@@ -162,11 +192,22 @@ export default function App() {
           onBack={() => setScreen('search')}
           onDetails={() => setScreen('why')}
           onStart={() => setScreen('tracking')}
+          safety={safety}
+          onSafetyChange={changeSafety}
+          refreshing={refreshing}
+          refreshError={refreshError}
         />
       )}
       {screen === 'why' && trip && <Why trip={trip} onBack={() => setScreen('recommended')} />}
       {screen === 'tracking' && trip && (
-        <Tracking trip={trip} {...shareProps} onEnd={() => setScreen('recommended')} onArrive={finishWalk} />
+        <Tracking
+          trip={trip}
+          {...shareProps}
+          onEnd={() => setScreen('recommended')}
+          onArrive={finishWalk}
+          onReroute={rerouteFrom}
+          onSos={() => setShowSos(true)}
+        />
       )}
       {screen === 'arrived' && trip && (
         <Arrived
@@ -175,6 +216,8 @@ export default function App() {
           onHome={() => openTab('home')}
         />
       )}
+
+      {showSos && <SosSheet onClose={() => setShowSos(false)} />}
 
       {showDeparture && (
         <DepartureSheet

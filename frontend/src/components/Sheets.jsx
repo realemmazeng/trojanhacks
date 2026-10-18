@@ -73,3 +73,41 @@ export function ShareSheet({ friends, selected, onDone, onClose, onAddFriends })
     </Sheet>
   );
 }
+
+/** Emergency options: USC DPS, 911, and copying a map link to your location. */
+export function SosSheet({ onClose }) {
+  const [shareText, setShareText] = useState('Puts a Google Maps link to where you are in your clipboard');
+  const copyLocation = () => {
+    if (!('geolocation' in navigator)) { setShareText('Location is not available on this device.'); return; }
+    setShareText('Getting your location…');
+    navigator.geolocation.getCurrentPosition(
+      async (pos) => {
+        const url = `https://www.google.com/maps?q=${pos.coords.latitude.toFixed(6)},${pos.coords.longitude.toFixed(6)}`;
+        try {
+          await navigator.clipboard.writeText(url);
+          setShareText('Copied — paste it into a message to a friend.');
+        } catch {
+          setShareText(url); // clipboard blocked: show the link so it can be copied by hand
+        }
+      },
+      (err) => setShareText(`Couldn't get your location: ${err.message}`),
+      { enableHighAccuracy: true, timeout: 10000, maximumAge: 10000 }
+    );
+  };
+  return (
+    <Sheet title="Need help?" onClose={onClose}>
+      <a className="btn btn-sos" href="tel:+12137404321" style={{ flexDirection: 'column', gap: 2, height: 64 }}>
+        <span>Call USC DPS Emergency</span>
+        <span style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, opacity: 0.9 }}>(213) 740-4321</span>
+      </a>
+      <a className="btn btn-secondary" href="tel:911" style={{ flexDirection: 'column', gap: 2, height: 64 }}>
+        <span>Call 911</span>
+        <span className="small muted">City emergency services</span>
+      </a>
+      <button className="btn btn-secondary" onClick={copyLocation} style={{ flexDirection: 'column', gap: 2, height: 'auto', minHeight: 64, padding: '10px 14px' }}>
+        <span>Copy my location</span>
+        <span className="small muted" style={{ fontWeight: 500, wordBreak: 'break-all' }} aria-live="polite">{shareText}</span>
+      </button>
+    </Sheet>
+  );
+}

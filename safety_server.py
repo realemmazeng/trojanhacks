@@ -161,11 +161,15 @@ class Handler(BaseHTTPRequestHandler):
                         else datetime.now(sr.LA))
             except (ValueError, TypeError):
                 return self._error(400, f"Bad depart_at: {depart!r}, expected e.g. 2026-10-17T21:40.")
+            try:
+                safety = min(2.0, max(0.0, float(req.get("safety", 1.0))))
+            except (ValueError, TypeError):
+                return self._error(400, "Bad safety, expected a number from 0 (fastest) to 2 (safest).")
             for label, p in (("Your starting point", origin), ("That destination", dest)):
                 if not sr.in_service_area(p):
                     return self._error(422, f"{label} is outside the area Safety Path covers "
                                             "(W Adams–W Jefferson, S Vermont–S Figueroa).")
-            result = sr.path_response(self.engine, origin, dest, when)
+            result = sr.path_response(self.engine, origin, dest, when, safety)
             if result is None:
                 return self._error(422, "Start and destination are too close together, "
                                         "or no walking path connects them.")

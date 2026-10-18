@@ -10,10 +10,13 @@ The frontend calls one endpoint. Until `VITE_API_URL` is set, it reads
 {
   "origin":      { "lat": 34.0219, "lng": -118.2836 },
   "destination": { "lat": 34.0333, "lng": -118.2768 },
-  "depart_at":   "2026-10-17T21:40"
+  "depart_at":   "2026-10-17T21:40",
+  "safety":      1
 }
 ```
 `depart_at` is local time (America/Los_Angeles), ISO 8601 without offset.
+`safety` (optional, default 1) is the route-preference slider: 0 = fastest path only … 2 = avoid risk most.
+The response echoes it as `safety`.
 
 ### Response
 | Field | Type | Used on |

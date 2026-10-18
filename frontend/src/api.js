@@ -12,7 +12,7 @@ export const apiUrl = (path) => `${API_URL}${path}`;
  * Ask the backend for a recommended path and the fastest path.
  * Request and response shapes are documented in docs/API_CONTRACT.md.
  */
-export async function getPath({ origin, destination, departAt }) {
+export async function getPath({ origin, destination, departAt, safety = 1 }) {
   if (usingMock) {
     await new Promise((r) => setTimeout(r, 600)); // feel like a network call
     return mockPath;
@@ -25,6 +25,7 @@ export async function getPath({ origin, destination, departAt }) {
       origin: { lat: origin.lat, lng: origin.lng },
       destination: { lat: destination.lat, lng: destination.lng },
       depart_at: departAt,
+      safety, // route preference: 0 = fastest … 2 = safest
     }),
   });
   if (!res.ok) {

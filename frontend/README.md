@@ -46,15 +46,20 @@ Home "Where to?" → Search → Recommended → (See details → Why) → Start 
 The walk starts at the phone's GPS position when it's inside the service area (`src/lib/location.js`),
 otherwise at the campus stand-in `CURRENT_LOCATION`.
 
-## Tracking modes
-`VITE_TRACKING_MODE` in `.env`:
-- `simulate` (default) — replays a walk along the path at 20× speed. The sheet shows a
-  **Demo: step off the path** button to show the off-path alert on stage.
-- `gps` — uses the phone's real location (`navigator.geolocation.watchPosition`).
-  Needs HTTPS on a phone: deploy (e.g. Vercel) or tunnel with `ngrok http 5173`.
+## Live tracking
+Tracking always uses the phone's real location (`navigator.geolocation.watchPosition` in `src/lib/useTracking.js`).
+It needs HTTPS on a phone: tunnel the backend (`cloudflared tunnel --url http://127.0.0.1:8000`) or deploy.
 
-Off-path rule: more than 30 m from the path for 3 readings in a row. Arrival: within 25 m of the end.
-Both are constants at the top of `src/lib/useTracking.js`.
+- Off-path rule: more than 30 m from the path (minus half the GPS accuracy) for 10 seconds. The app then asks
+  the backend for a new path from the current position (`rerouteFrom` in `App.jsx`); "New path from here" does it
+  immediately. If the user keeps leaving the new path, the next reroute waits another 10 s.
+- Fixes worse than 50 m accuracy are ignored. Arrival: within 25 m of the end. The screen is kept awake via the
+  Wake Lock API where supported (not iOS Safari).
+- These constants are at the top of `src/lib/useTracking.js`.
+
+## Route preference
+The Recommended screen has a Fastest ↔ Safest slider (0–2, steps of 0.25). It re-requests `POST /path` with
+`safety` 450 ms after the user stops dragging and is remembered in `localStorage` (`safetypath:safety`).
 
 ## Local data (v1)
 Profile, trusted contacts and walk history are saved in the browser (`localStorage`, see `src/lib/store.js`).
