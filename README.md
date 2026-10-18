@@ -169,4 +169,43 @@ static/                  Older single-page UI; served only if frontend/dist hasn
 - **Rerouting needs the service area:** if you wander outside it, no new path is found and the off-path banner shows why.
 - Not built: voice directions, push notifications, game-day/event awareness.
 
+## Tech stack
+
+### Frontend: a phone app that installs from the browser
+- **React 18 + Vite 5**: the app screens (search, recommended route, "why this path?", live tracking, friends, activity)
+- **Leaflet + React-Leaflet** with **OpenStreetMap** tiles, darkened with CSS for a night-time map
+- **Installable web app (PWA)**: a web app manifest and service worker let students add it to their home screen and open it full screen, and the app itself loads offline
+- **Browser APIs**: Geolocation (live tracking), Wake Lock (keeps the screen on while walking), Clipboard (SOS "copy my location"), and local storage for contacts and walk history
+- **Design**: custom design tokens, with the Figtree and Space Grotesk fonts
+
+### Backend: Python 3.12, standard library only
+- No web framework and no database. It uses Python's built-in HTTP server, plus a routing engine we wrote ourselves.
+- **Routing**: Dijkstra's shortest-path algorithm over about 34,500 walkable street segments. Each segment gets a safety-weighted cost, so we compute a *recommended* and a *fastest* path for every trip.
+- **Per-segment safety scoring:**
+  - **Crime risk**: nearby incidents add risk, closer ones more. Each is weighted by how serious it was, how recent it was, and how close it happened to the time you're walking. USC DPS alerts count double.
+  - **Lighting**: the wattage of streetlights near each segment.
+  - **Darkness**: the sun's position at your departure time (standard solar formula), combined with lighting.
+  - **Street activity**: typical activity by hour and street type, raised by live bike-share activity.
+  - **USC patrol coverage**: whether each segment is inside the DPS patrol area (approximate boundary).
+- **Explainability**: plain-English reasons ("Greater lighting coverage (92% vs 64%)") and turn-by-turn directions worked out from street names and turn angles.
+- **Live rerouting**: if you're more than 30 m off the path for 10 seconds, the app finds a new path from where you are.
+- **Fastest ↔ Safest slider**: lets users choose how much extra walking they'll accept for a safer route.
+
+### Data sources
+| Data | Source |
+|---|---|
+| Walking network | OpenStreetMap, via the Overpass API |
+| Streetlights | City of LA open data (7,927 lights near USC) |
+| Crime | USC DPS crime alerts (221, scraped from the DPS website's public API) + LAPD incidents (3,351 near USC, 2024–2026) |
+| Patrol coverage | USC DPS University Park patrol area (approximate) |
+| Live activity | LA Metro Bike Share real-time feed |
+| Place search | US Census Geocoder, OpenStreetMap Nominatim, and street intersections from the walking network |
+
+### Tools
+- Playwright for browser testing on a phone-sized screen
+- ngrok / Cloudflare Tunnel to give the laptop server a secure (https) address for the live phone demo
+- Built with help from Claude Code (an AI coding assistant)
+
+**Built with:** `react` · `vite` · `leaflet` · `python` · `openstreetmap` · `pwa` · `geolocation-api` · `la-open-data` · `gbfs`
+
 # trojanhacks
