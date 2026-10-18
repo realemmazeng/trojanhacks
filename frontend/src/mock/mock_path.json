@@ -1,0 +1,62 @@
+{
+  "recommended": {
+    "minutes": 15,
+    "distance_m": 1500,
+    "geometry": [
+      [34.02190, -118.28360],
+      [34.02480, -118.28250],
+      [34.02780, -118.28130],
+      [34.03050, -118.28030],
+      [34.03250, -118.27960],
+      [34.03290, -118.27820],
+      [34.03330, -118.27680]
+    ],
+    "steps": [
+      { "instruction": "Head north on S Hoover St", "distance_m": 1230, "start_index": 0 },
+      { "instruction": "Turn right onto W Adams Blvd", "distance_m": 270, "start_index": 4 },
+      { "instruction": "Arrive at your destination", "distance_m": 0, "start_index": 6 }
+    ],
+    "factors": {
+      "lighting_pct": 92,
+      "activity": "High",
+      "activity_score": 85,
+      "resource_proximity_pct": 100,
+      "recent_alerts": 0
+    },
+    "reasons": [
+      "Greater lighting coverage",
+      "More active streets at this time",
+      "More of the path is within USC's published patrol area",
+      "No recent relevant USC alerts directly along the path"
+    ]
+  },
+  "fastest": {
+    "minutes": 12,
+    "distance_m": 1415,
+    "geometry": [
+      [34.02190, -118.28360],
+      [34.02500, -118.28120],
+      [34.02800, -118.28000],
+      [34.03050, -118.27820],
+      [34.03330, -118.27680]
+    ],
+    "factors": {
+      "lighting_pct": 64,
+      "activity": "Low",
+      "activity_score": 30,
+      "resource_proximity_pct": 70,
+      "recent_alerts": 1
+    },
+    "summary": "Less lighting, quieter side streets"
+  },
+  "extra_minutes": 3,
+  "alert_window_days": 7,
+  "data_sources": [
+    { "name": "Streetlights · City of LA", "updated_at": "2026-10-15T08:00:00-07:00" },
+    { "name": "Street activity · OSM opening hours", "updated_at": "2026-10-16T08:00:00-07:00" },
+    { "name": "Patrol area · USC DPS", "updated_at": "2026-01-15T08:00:00-08:00" },
+    { "name": "Crime log · USC DPS", "updated_at": "2026-10-17T21:30:00-07:00" }
+  ],
+  "updated_at": "2026-10-17T21:30:00-07:00",
+  "disclaimer": "This path doesn't guarantee your safety."
+}
